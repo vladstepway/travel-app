@@ -1,15 +1,18 @@
 import React from 'react';
+import { Row, Col } from 'antd';
 import Search from './Search/Search'
 import Language from './Language/Language'
-import css from './Header.module.css'
 
 
-const Header = function(){
-  return(<div className={css.header}>
-  <span>Header</span>
-  <Search/>
-  <Language/>
-  </div>)
+
+const Header = function () {
+  return (<>
+    <Row>
+      <Col span={8}> <span>Header</span></Col>
+      <Col span={8}><Search /></Col>
+      <Col span={8}><Language /></Col>
+    </Row>
+  </>)
 }
 
 

@@ -75,11 +75,9 @@ const countryReducer = function (state = initialState, action: any) {
     case SET_COUNTRIES:
       stateCopy.countries = [...action.countries];
       return stateCopy;
-      break;
     case SET_COUNTRY:
       stateCopy.currentCountry = action.country;
       return stateCopy;
-      break;
     default:
       return state;
   }

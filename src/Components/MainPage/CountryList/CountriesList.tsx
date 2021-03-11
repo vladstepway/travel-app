@@ -6,7 +6,7 @@ const CountrieList = function ({ countriesList }: any ) {
   const list = countriesList.map((el: any) => (
     <li key={el.name}>
       <NavLink to={`/${el.name}`} id={el.name}>
-        <img className={css.image} src={el.photo} />
+        <img alt="alt" className={css.image} src={el.photo} />
         <span>{el.name}</span>
         <span> rating : {el.rating}</span>
       </NavLink>

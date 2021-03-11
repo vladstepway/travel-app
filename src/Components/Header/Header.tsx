@@ -12,7 +12,7 @@ const Header = function () {
     <Row wrap justify="center" style={{background:'#FFD97D'}}>
       <Col flex={2} style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}><img style={{width:'120px', height:'auto'}} src={logo} /></Col>
       <Col flex={2}><Search /></Col>
-      <Col flex={2} style={{display:'flex', justifyContent:'flex-end', alignItems:'center'}} ><Language  style={{margin:'0 auto'}} /></Col>
+      <Col flex={2} style={{display:'flex', justifyContent:'flex-end', alignItems:'center'}} ><Language/></Col>
     </Row>
   </>)
 }

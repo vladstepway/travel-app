@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from 'antd';
 import { CompassOutlined } from '@ant-design/icons';
 
-const Search = function(){
+const Search: React.FC = () => {
   return(<>
  <Input placeholder="набирай сцуко" prefix={<CompassOutlined />} />
   </>)

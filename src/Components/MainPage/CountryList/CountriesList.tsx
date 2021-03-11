@@ -5,9 +5,9 @@ import css from './CountriesList.module.css';
 
 const { Meta } = Card
 
-const CountrieList = function ({ countriesList }) {
+const CountrieList = function ({ countriesList }: any) {
 
-	const list = countriesList.map((el) =>
+	const list = countriesList.map((el:any) =>
 		<Col span={4} key={el.name}>
 			<Card
 				style={{ width: '200px' }}

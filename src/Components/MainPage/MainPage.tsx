@@ -13,7 +13,7 @@ const Page = function(){
       <Route path={`/${window.location.pathname.substring(1)}`} render={()=><CountryPageContainer link={window.location.pathname.substring(1)}/>}/>
       </Switch>
       </div>
- )
+  )
 }
 
 

@@ -38,8 +38,10 @@
         "ignoreComments": true
       }
     ],
+    "arrow-body-style": "off",
     "no-plusplus": "off",
     "react/jsx-key": "error",
+    "func-names" : "off",
     "import/no-extraneous-dependencies": [
       "warn",
       {

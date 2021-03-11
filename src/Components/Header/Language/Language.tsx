@@ -4,11 +4,11 @@ import { Select } from 'antd';
 const { Option } = Select;
 
 
-const Language = function(){
+const Language: React.FC = () => {
   return(<>
   <Select
     labelInValue
-    defaultValue={{ value: 'Ru' }}
+    // defaultValue={{ value: 'Ru' }}
     style={{ width: 120 }}
   >
     <Option value="Ru">Ru</Option>

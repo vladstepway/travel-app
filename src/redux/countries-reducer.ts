@@ -1,7 +1,7 @@
-import {initialState} from './initialState'
+import { initialState } from './initialState';
 
-const SET_COUNTRIES = "SET-COUNTRIES";
-const SET_COUNTRY = "SET-COUNTRY";
+const SET_COUNTRIES = 'SET-COUNTRIES';
+const SET_COUNTRY = 'SET-COUNTRY';
 
 // const initialState = {
 // 	lang: "ru",
@@ -20,7 +20,7 @@ const SET_COUNTRY = "SET-COUNTRY";
 // 					},
 // 				],
 //                 videoURL:'',
-//                 mapCoords:{x:0,y:0} 
+//                 mapCoords:{x:0,y:0}
 // 			},
 // 			photo:
 // 				"https://interaffairs.ru/i/2018/08/0fec38c2dc45c048e156353bab8d5d6d.jpg",
@@ -31,7 +31,7 @@ const SET_COUNTRY = "SET-COUNTRY";
 // 			capital: "",
 // 			details: {
 
-// 				info: {}, 
+// 				info: {},
 // 				views: [
 // 					{
 // 						imgURL: "",
@@ -69,37 +69,32 @@ const SET_COUNTRY = "SET-COUNTRY";
 // 	],
 // };
 
-const countryReducer = function(state = initialState, action){
-  const stateCopy = {...state}
-	switch (action.type) {
-		case SET_COUNTRIES:
-			stateCopy.countries = [...action.countries];
-			return stateCopy;
-			break;
-		case SET_COUNTRY:
+const countryReducer = function (state = initialState, action: any) {
+  const stateCopy: any = { ...state };
+  switch (action.type) {
+    case SET_COUNTRIES:
+      stateCopy.countries = [...action.countries];
+      return stateCopy;
+    case SET_COUNTRY:
       stateCopy.currentCountry = action.country;
       return stateCopy;
-			break;
-      default:
+    default:
       return state;
-}
-
+  }
 };
 
+export const setCountries = function (countries: any) {
+  return {
+    type: SET_COUNTRIES,
+    countries,
+  };
+};
 
-export const setCountries = function (countries){
-	return({
-	type: SET_COUNTRIES,countries
-})
-}
-
-
-export const setCountry = function (country){
-	return({
-	type: SET_COUNTRY, country
-})
-}
-
-
+export const setCountry = function (country: any) {
+  return {
+    type: SET_COUNTRY,
+    country,
+  };
+};
 
 export default countryReducer;

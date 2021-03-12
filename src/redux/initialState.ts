@@ -1,7 +1,12 @@
 import { initialStateType } from '../Interfaces';
 
 export const initialState: initialStateType = {
+
     lang: 'ru',
+    searchInput: {
+    text:'',
+    enabled: false
+    },
     countries: [
         {
             name: 'Germany',

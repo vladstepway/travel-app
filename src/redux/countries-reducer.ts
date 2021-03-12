@@ -2,6 +2,8 @@ import { initialState } from './initialState';
 
 const SET_COUNTRIES = 'SET-COUNTRIES';
 const SET_COUNTRY = 'SET-COUNTRY';
+const SET_SEARCH = 'SET-SEARCH';
+const SET_SEARCH_TOGGLE = 'SET-SEARCH-TOGGLE';
 
 // const initialState = {
 // 	lang: "ru",
@@ -69,7 +71,7 @@ const SET_COUNTRY = 'SET-COUNTRY';
 // 	],
 // };
 
-const countryReducer = function (state = initialState, action: any) {
+const countryReducer =  (state = initialState, action: any) => {
   const stateCopy: any = { ...state };
   switch (action.type) {
     case SET_COUNTRIES:
@@ -78,23 +80,45 @@ const countryReducer = function (state = initialState, action: any) {
     case SET_COUNTRY:
       stateCopy.currentCountry = action.country;
       return stateCopy;
+    case SET_SEARCH:
+      stateCopy.searchInput.text = action.inputText;
+      return stateCopy;
+    case SET_SEARCH_TOGGLE:
+      stateCopy.searchInput.enabled = action.value;
+      return stateCopy;
     default:
       return state;
   }
 };
 
-export const setCountries = function (countries: any) {
-  return {
+export const setCountries =  (countries: any) => (
+  {
     type: SET_COUNTRIES,
     countries,
-  };
-};
+  }
+)
 
-export const setCountry = function (country: any) {
-  return {
+export const setCountry = (country: any) => ( 
+  {
     type: SET_COUNTRY,
     country,
-  };
-};
+  }
+)
+
+export const setSearch = (inputText: string) => (
+  {
+      type: SET_SEARCH,
+      inputText
+    }
+)
+
+export const setSearchToggle = (value: boolean) => (
+  {
+      type: SET_SEARCH_TOGGLE,
+      value
+    }
+)
+
+
 
 export default countryReducer;

@@ -23,7 +23,10 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords: {
+                    center: { latitude: 51.1642292, longitude: 10.4541194 },
+                    capital: { latitude: 52.51704, longitude: 13.38886 }
+                },
             },
             photo:
                 'https://www.ledgerinsights.com/wp-content/uploads/2019/09/germany-810x476.jpg',
@@ -47,14 +50,17 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords: {
+                    center: { latitude: 23.644800, longitude: 77.216721 },
+                    capital: { latitude: 28.61390, longitude: 77.20901 }
+                }
             },
             photo:
                 'https://imagevars.gulfnews.com/2019/08/22/India-Economy-lead_16cb9c8b639_medium.jpg',
             rating: 2,
         },
         {
-            name: 'Brazil ',
+            name: 'Brazil',
             capital: 'Brasília',
             details: {
                 info: 'Brazil is the largest country in both South America and Latin America. At 8.5 million square kilometers (3.2 million square miles)' +
@@ -71,14 +77,17 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords: {
+                    center: { latitude: -14.2400732, longitude: -53.180501 },
+                    capital: { latitude: -15.79281, longitude: -47.88196 }
+                }
             },
             photo:
                 'https://noticias.mapfre.com/inc/uploads/2020/05/800-x-472-BrasilpostCovid.png',
             rating: 1,
         },
         {
-            name: 'North Korea',
+            name: 'North-Korea',
             capital: 'Pyongyang',
             details: {
                 info: 'North Korea is a country in East Asia constituting the northern part of the Korean Peninsula.' +
@@ -93,13 +102,16 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords: {
+                    center: { latitude: 40.339851, longitude: 127.510094 },
+                    capital: { latitude: 39.01687, longitude: 125.75003 }
+                }
             },
             photo:
                 'https://cdn.fishki.net/upload/post/2017/06/14/2314288/b31ecaa2988b66d4717107dd6f3d51c3.jpg',
             rating: 2,
         },
-      {
+        {
             name: 'Norway',
             capital: 'Oslo',
             details: {
@@ -114,13 +126,16 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords:{
+                  center: { latitude: 60.472023, longitude: 8.468946 },
+                  capital: { latitude: 59.91333, longitude: 10.73897 }
+                }
             },
             photo:
                 'https://assets.kpmg/content/dam/kpmg/xx/images/2019/08/lighted-houses-on-snow-covered-mountains-during-sunset-norway.jpg/jcr:content/renditions/original',
             rating: 2,
         },
-      {
+        {
             name: 'Nigeria',
             capital: 'Abuja',
             details: {
@@ -136,13 +151,16 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords: {
+                  center: { latitude: 9.077751, longitude: 8.6774567 },
+                  capital: { latitude: 9.06433, longitude: 7.48930 }
+                }
             },
             photo:
                 'https://cdnuploads.aa.com.tr/uploads/Contents/2020/08/19/thumbs_b_c_b8daaabca4cbfb4266465c17236972ca.jpg?v=184515',
             rating: 2,
         },
-      {
+        {
             name: 'Fiji',
             capital: 'Suva',
             details: {
@@ -151,7 +169,7 @@ export const initialState: initialStateType = {
                     ' amounting to a total land area of about 18,300 square kilometres (7,100 sq mi). The most outlying island group is Ono-i-Lau. About 87% of the total population ' +
                     'of 883,483 live on the two major islands, Viti Levu and Vanua Levu. About three-quarters of Fijians live on Viti Levu\'s coasts:' +
                     ' either in the capital city of Suva; or in smaller urban centres such as Nadi—where tourism is the major local industry; or in Lautoka,' +
-                    ' where the sugar-cane industry is dominant. The interior of Viti Levu is sparsely inhabited because of its terrain.[14]',
+                    ' where the sugar-cane industry is dominant. The interior of Viti Levu is sparsely inhabited because of its terrain.',
                 views: [
                     {
                         imgURL: '',
@@ -160,10 +178,38 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-                mapCoords: { x: 0, y: 0 },
+                mapCoords: {
+                  center: { latitude: -17.4624892, longitude: 179.2583049 },
+                  capital: { latitude: -18.14159, longitude: 178.44217 }
+                }
             },
             photo:
                 'https://cache.marriott.com/marriottassets/marriott/NANMC/nanmc-view-0007-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*',
+            rating: 2,
+        }, {
+            name: 'Mexico',
+            capital: 'Mexico City',
+            details: {
+                info: 'Mexico is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and west by the Pacific Ocean;' +
+                    ' to the southeast by Guatemala, Belize, and the Caribbean Sea; and to the east by the Gulf of Mexico. Mexico covers 1,972,550 square kilometers (761,610 sq mi)' +
+                    ', making it the world\'s 13th-largest country by area; with approximately 126,014,024 inhabitants, it is 10th-most-populous country and has the most Spanish-speakers.' +
+                    ' Mexico is organized as a federation comprising 31 states and Mexico City, its capital and largest metropolis. Other major urban areas include Guadalajara,' +
+                    ' Monterrey, Puebla, Toluca, Tijuana, Ciudad Juárez, and León.',
+                views: [
+                    {
+                        imgURL: '',
+                        viewName: '',
+                        about: '',
+                    },
+                ],
+                videoURL: '',
+                mapCoords: {
+                  center: { latitude: 19.451054, longitude: -99.125519 },
+                  capital: { latitude: 19.43263, longitude: -99.13318 }
+                }
+            },
+            photo:
+                'https://catalyst88.com/files/Blog-Distillery-Developers-Mexico-City-1050x574-100.jpg',
             rating: 2,
         },
     ],

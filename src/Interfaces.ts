@@ -1,6 +1,3 @@
-import { LatLngExpression } from "leaflet";
-
-
 interface views {
   imgURL: string;
   viewName: string;
@@ -22,7 +19,13 @@ interface countries {
   photo: string;
 }
 
+interface searchInput {
+  text:string,
+  enabled:boolean
+}
+
 export interface initialStateType {
   countries: countries[];
   lang: string;
+  searchInput: object;
 }

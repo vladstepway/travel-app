@@ -1,5 +1,4 @@
 import React from "react";
-import Control from 'react-leaflet-control';
 import { MapContainer, TileLayer, GeoJSON, Marker, Popup, Tooltip } from 'react-leaflet';
 import styles from './Map.module.css';
 

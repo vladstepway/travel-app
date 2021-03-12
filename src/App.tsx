@@ -23,3 +23,11 @@ const App: FC = () => (
 
 
 export default App;
+
+
+// git checkout develop;
+// git pull origin develop// подтягиваю изменеения из репозитория;
+// git checkout -b mybranch || git checkout mybranch (если надо подтянуть изменения в свою ветку);
+// ?? git merge develop || cherry-pick;
+// git push origin mybranch;
+// pull request на гитхабе;

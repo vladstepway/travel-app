@@ -1,4 +1,4 @@
-import { initialStateType } from '../../Interfaces';
+import { IInitialStateType } from '../../Interfaces';
 import { SET_LANGUAGE } from '../actions/actionTypes';
 import { initialState } from '../initialState';
 
@@ -8,7 +8,7 @@ type LangActionType = {
 };
 
 const langReducer = (state = initialState, action: LangActionType) => {
-  const stateCopy: initialStateType = { ...state };
+  const stateCopy: IInitialStateType = { ...state };
   switch (action.type) {
     case SET_LANGUAGE:
       stateCopy.lang = action.lang;

@@ -1,12 +1,14 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import Map from './Map/Map';
+import './CountryPage.module.css';
 
-const CountryPage = function ({ country }: any) {
-  const { t } = useTranslation();
+const CountryPage = function (props: any) {
+  const { country } = props;
+  const { mapCoords } = country.details;
   return (
     <div>
-      {t(`countryName.${country.name}`)}
       <img src={country.photo} alt="" />
+      <Map countryName={country.name} mapCoords={mapCoords} />
     </div>
   );
 };

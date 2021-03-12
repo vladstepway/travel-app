@@ -4,19 +4,21 @@ const en = {
       Germany: 'Germany',
       India: 'India',
       Brazil: 'Brazil',
-      'North Korea': 'North Korea',
+      'North-Korea': 'North Korea',
       Norway: 'Norway',
       Nigeria: 'Nigeria',
       Fiji: 'Fiji',
+      Mexico: 'Mexico',
     },
     capital: {
       Germany: 'Berlin',
       India: 'New Delhi',
       Brazil: 'Brasilia',
-      'North Korea': 'Pyongyang',
+      'North-Korea': 'Pyongyang',
       Norway: 'Oslo',
       Nigeria: 'Abuja',
       Fiji: 'Suva',
+      Mexico: 'Mexico City',
     },
     countryInfo: {
       Germany: `Germany is a country at the crossroads of Central and Western Europe. It is located between the Baltic and North Seas in the north,
@@ -36,7 +38,7 @@ const en = {
            “It is the largest country in which Portuguese is the official language, and the only one in America”;
            “It is also one of the most multicultural and ethnically diverse nations due to over a century of massive immigration from around the world”;
            as well as the most populous country with a Catholic majority ...`,
-      'North Korea': `North Korea is a country in East Asia that makes up the northern part of the Korean Peninsula."
+      'North-Korea': `North Korea is a country in East Asia that makes up the northern part of the Korean Peninsula."
            "The country is bordered in the north by China and Russia along the Amnok (known as Yalu in Chinese) and Tyumen rivers,"
            and south of South Korea, with the heavily fortified Korean Demilitarized Zone (DMZ) separating them. North Korea,
            like its southern counterpart, it claims to be the legitimate government of the entire peninsula and surrounding islands. Pyongyang is the country's capital and largest city. `,
@@ -55,6 +57,11 @@ const en = {
            out of 883,483 people live on two large islands, Viti Levu and Vanua Levu. About three quarters of Fijians live on the coasts of Viti Levu:
            either in the capital Suva; or in small urban centers such as Nadi, where tourism is the main local industry; or in Lautok
            where sugarcane production dominates. The interior of Viti Levu is sparsely populated due to its relief. `,
+      Mexico: `Mexico is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and west by the Pacific Ocean;
+            to the southeast by Guatemala, Belize, and the Caribbean Sea; and to the east by the Gulf of Mexico. Mexico covers 1,972,550 square kilometers (761,610 sq mi)
+           , making it the world's 13th-largest country by area; with approximately 126,014,024 inhabitants, it is 10th-most-populous country and has the most Spanish-speakers.
+            Mexico is organized as a federation comprising 31 states and Mexico City, its capital and largest metropolis. Other major urban areas include Guadalajara,
+            Monterrey, Puebla, Toluca, Tijuana, Ciudad Juárez, and León.`,
     },
   },
 };

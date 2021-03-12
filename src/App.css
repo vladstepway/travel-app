@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-.container {
-  width: 1366px;
-  margin: 0 auto;
+.mark{
+  background-color:yellow;
 }
 
 .App-logo {

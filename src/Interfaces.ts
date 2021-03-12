@@ -1,3 +1,6 @@
+import { LatLngExpression } from "leaflet";
+
+
 interface views {
   imgURL: string;
   viewName: string;
@@ -8,7 +11,7 @@ interface details {
   info: string;
   views: views[];
   videoURL: string;
-  mapCoords: object;
+  mapCoords: any;
 }
 
 interface countries {

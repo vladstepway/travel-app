@@ -1,4 +1,9 @@
-import { ADD, SET_COUNTRIES, SET_COUNTRY } from '../actions/actionTypes';
+import {
+  ADD,
+  SET_COUNTRIES,
+  SET_COUNTRY,
+  SET_LANGUAGE,
+} from '../actions/actionTypes';
 
 export function add() {
   return {
@@ -17,5 +22,12 @@ export const setCountry = function (country: string) {
   return {
     type: SET_COUNTRY,
     country,
+  };
+};
+
+export const setLanguage = (lang: string) => {
+  return {
+    type: SET_LANGUAGE,
+    lang,
   };
 };

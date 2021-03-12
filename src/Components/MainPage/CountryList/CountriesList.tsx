@@ -1,11 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, Col, Row, Avatar } from 'antd';
+import { useTranslation } from 'react-i18next';
 import css from './CountriesList.module.css';
 
 const { Meta } = Card
 
 const CountrieList = function ({ countriesList }: any) {
+
+	const { t } = useTranslation();
 
 	const list = countriesList.map((el:any) =>
 		<Col span={4} key={el.name}>
@@ -23,8 +26,8 @@ const CountrieList = function ({ countriesList }: any) {
 				]}
 			>
 				<Meta style={{ textAlign: 'center' }}
-					title={el.name}
-					description="This is the description"
+					title={t(`countryName.${el.name}`)}
+					description={t(`capital.${el.name}`)}
 				/>
 
 			</Card>

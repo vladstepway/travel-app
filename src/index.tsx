@@ -12,11 +12,11 @@ const renderer = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <I18nextProvider i18n={i18n}>
-          <Provider store={store}>
+        <Provider store={store}>
+          <I18nextProvider i18n={i18n}>
             <App />
-          </Provider>
-        </I18nextProvider>
+          </I18nextProvider>
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

@@ -1,31 +1,31 @@
-interface views {
+export interface IViews {
   imgURL: string;
   viewName: string;
   about: string;
 }
 
-interface details {
+export interface IDetails {
   info: string;
-  views: views[];
+  views: IViews[];
   videoURL: string;
   mapCoords: any;
 }
 
-interface countries {
+export interface ICountries {
   name: string;
   capital: string;
-  details: details;
+  details: IDetails;
   rating: any;
   photo: string;
 }
 
-interface searchInput {
+export interface ISearchInput {
   text:string,
   enabled:boolean
 }
 
-export interface initialStateType {
-  countries: countries[];
+export interface IInitialStateType {
+  countries: ICountries[];
   lang: string;
   searchInput: object;
 }

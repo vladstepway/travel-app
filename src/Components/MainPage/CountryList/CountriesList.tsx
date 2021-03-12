@@ -1,10 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, Col, Row, Avatar } from 'antd';
+import { useTranslation } from 'react-i18next';
+import css from './CountriesList.module.css';
 
 const { Meta } = Card
 
-const CountrieList = function ({ countriesList,text,setExcretion,setSearchToggle}: any) {
+const CountriesList = function ({ countriesList,text,setExcretion,setSearchToggle}: any) {
+
+	const { t } = useTranslation();
 
 	const list = countriesList.map((el:any) =>{
 		return (
@@ -24,8 +28,9 @@ const CountrieList = function ({ countriesList,text,setExcretion,setSearchToggle
 				]}
 			>
 				<Meta style={{ textAlign: 'center' }}
-					title={setExcretion(el.name,text)}
-					description={setExcretion(el.capital,text)}
+
+					title={setExcretion(t(`countryName.${el.name}`),text)}
+					description={setExcretion(t(`capital.${el.name}`),text)}
 				/>
 
 			</Card>
@@ -44,4 +49,4 @@ const CountrieList = function ({ countriesList,text,setExcretion,setSearchToggle
 }
 
 
-export default CountrieList
+export default CountriesList

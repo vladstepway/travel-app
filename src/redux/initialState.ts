@@ -1,6 +1,6 @@
-import { initialStateType } from '../Interfaces';
+import { IInitialStateType } from '../Interfaces';
 
-export const initialState: initialStateType = {
+export const initialState: IInitialStateType = {
 
     lang: 'ru',
     searchInput: {

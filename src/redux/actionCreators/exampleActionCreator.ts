@@ -1,4 +1,11 @@
-import { ADD, SET_COUNTRIES, SET_COUNTRY } from '../actions/actionTypes';
+import {
+  ADD,
+  SET_COUNTRIES,
+  SET_COUNTRY,
+  SET_LANGUAGE,
+  SET_SEARCH,
+  SET_SEARCH_TOGGLE,
+} from '../actions/actionTypes';
 
 export function add() {
   return {
@@ -19,3 +26,27 @@ export const setCountry = function (country: string) {
     country,
   };
 };
+
+export const setLanguage = (lang: string) => {
+  return {
+    type: SET_LANGUAGE,
+    lang,
+  };
+};
+
+
+
+
+export const setSearch = (inputText: string) => (
+  {
+      type: SET_SEARCH,
+      inputText
+    }
+)
+
+export const setSearchToggle = (value: boolean) => (
+  {
+      type: SET_SEARCH_TOGGLE,
+      value
+    }
+)

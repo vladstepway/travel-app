@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CountriesList from './CountriesList';
-import { setCountries, setSearchToggle } from '../../../redux/countries-reducer';
+import { setCountries, setSearchToggle } from '../../../redux/actionCreators/exampleActionCreator';
 
 const countryFilter = function (searchInputTxt: string, countries: any) {
   let countriesCopy;

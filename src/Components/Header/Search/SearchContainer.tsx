@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './Search';
-import { setSearch } from '../../../redux/countries-reducer';
+import { setSearch } from '../../../redux/actionCreators/exampleActionCreator';
 
 const MapStateToProps = ({countryReducer:{searchInput:{text,enabled}}}: any) => {
 

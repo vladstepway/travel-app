@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CountryPage from './CountryPage';
-import { setCountries } from '../../../redux/countries-reducer';
+import { setCountries } from '../../../redux/actionCreators/exampleActionCreator';
+import {ICountries} from '../../../Interfaces'; 
 
 
 
@@ -16,7 +17,7 @@ const MapStateToProps = function (state: any, { link }: any) {
 
 const MapDispatchToProps = function (dispatch: any) {
   return {
-    setCountries: (countriesList: any) => dispatch(setCountries(countriesList)),
+    setCountries: (countriesList: ICountries[]) => dispatch(setCountries(countriesList)),
   };
 };
 

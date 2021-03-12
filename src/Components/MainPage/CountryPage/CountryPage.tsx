@@ -1,16 +1,14 @@
 import React from 'react';
-import Map from "./Map/Map";
+import Map from './Map/Map';
 import './CountryPage.module.css';
 
 const CountryPage = function (props: any) {
-    const { country } = props;
-    console.log(props);
-    const { mapCoords }  = country.details;
+  const { country } = props;
+  const { mapCoords } = country.details;
   return (
     <div>
-      {country.name}
       <img src={country.photo} alt="" />
-      <Map countryName={country.name} mapCoords={mapCoords}/>
+      <Map countryName={country.name} mapCoords={mapCoords} />
     </div>
   );
 };

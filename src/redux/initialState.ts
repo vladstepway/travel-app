@@ -78,7 +78,7 @@ export const initialState: initialStateType = {
       rating: 1,
     },
     {
-      name: 'North Korea',
+      name: 'North-Korea',
       capital: 'Pyongyang',
       details: {
         info: 'North Korea is a country in East Asia constituting the northern part of the Korean Peninsula.' +
@@ -151,7 +151,7 @@ export const initialState: initialStateType = {
             ' amounting to a total land area of about 18,300 square kilometres (7,100 sq mi). The most outlying island group is Ono-i-Lau. About 87% of the total population ' +
             'of 883,483 live on the two major islands, Viti Levu and Vanua Levu. About three-quarters of Fijians live on Viti Levu\'s coasts:' +
             ' either in the capital city of Suva; or in smaller urban centres such as Nadi—where tourism is the major local industry; or in Lautoka,' +
-            ' where the sugar-cane industry is dominant. The interior of Viti Levu is sparsely inhabited because of its terrain.[14]',
+            ' where the sugar-cane industry is dominant. The interior of Viti Levu is sparsely inhabited because of its terrain.',
         views: [
           {
             imgURL: '',
@@ -164,6 +164,28 @@ export const initialState: initialStateType = {
       },
       photo:
           'https://cache.marriott.com/marriottassets/marriott/NANMC/nanmc-view-0007-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*',
+      rating: 2,
+    },{
+      name: 'Mexico',
+      capital: 'Mexico City',
+      details: {
+        info: 'Mexico is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and west by the Pacific Ocean;' +
+            ' to the southeast by Guatemala, Belize, and the Caribbean Sea; and to the east by the Gulf of Mexico. Mexico covers 1,972,550 square kilometers (761,610 sq mi)' +
+            ', making it the world\'s 13th-largest country by area; with approximately 126,014,024 inhabitants, it is 10th-most-populous country and has the most Spanish-speakers.' +
+            ' Mexico is organized as a federation comprising 31 states and Mexico City, its capital and largest metropolis. Other major urban areas include Guadalajara,' +
+            ' Monterrey, Puebla, Toluca, Tijuana, Ciudad Juárez, and León.',
+        views: [
+          {
+            imgURL: '',
+            viewName: '',
+            about: '',
+          },
+        ],
+        videoURL: '',
+        mapCoords: { latitude: 19.451054, longitude: -99.125519 },
+      },
+      photo:
+          'https://catalyst88.com/files/Blog-Distillery-Developers-Mexico-City-1050x574-100.jpg',
       rating: 2,
     },
   ],

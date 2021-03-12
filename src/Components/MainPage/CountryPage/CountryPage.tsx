@@ -10,7 +10,7 @@ const CountryPage = function (props: any) {
     <div>
       {country.name}
       <img src={country.photo} alt="" />
-      <Map mapCoords={mapCoords}/>
+      <Map countryName={country.name} mapCoords={mapCoords}/>
     </div>
   );
 };

@@ -5,10 +5,11 @@ import { setCountries } from '../../../redux/countries-reducer';
 
 
 const MapStateToProps = function (state: any, { link }: any) {
-  console.log(state);
   return {
     country: state.countryReducer.countries.find(
-      (el: any) => el.name.toLowerCase() === link.toLowerCase()
+
+      (el: any) =>
+  el.name.toLowerCase() === link.toLowerCase()
     ),
   };
 };

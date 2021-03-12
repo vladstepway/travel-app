@@ -126,7 +126,6 @@ export const initialState: initialStateType = {
                     },
                 ],
                 videoURL: '',
-
                 mapCoords:{
                   center: { latitude: 60.472023, longitude: 8.468946 },
                   capital: { latitude: 59.91333, longitude: 10.73897 }

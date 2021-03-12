@@ -1,6 +1,3 @@
-import { LatLngExpression } from "leaflet";
-
-
 interface views {
   imgURL: string;
   viewName: string;

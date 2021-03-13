@@ -5,7 +5,7 @@ export const initialState: IInitialStateType = {
     lang: 'ru',
     searchInput: {
     text:'',
-    enabled: false
+    disabled: false
     },
     countries: [
         {

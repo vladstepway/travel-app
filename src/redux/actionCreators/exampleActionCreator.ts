@@ -4,7 +4,7 @@ import {
   SET_COUNTRY,
   SET_LANGUAGE,
   SET_SEARCH,
-  SET_SEARCH_TOGGLE,
+  SET_SEARCH_IS_DISABLED,
 } from '../actions/actionTypes';
 
 export function add() {
@@ -34,9 +34,6 @@ export const setLanguage = (lang: string) => {
   };
 };
 
-
-
-
 export const setSearch = (inputText: string) => (
   {
       type: SET_SEARCH,
@@ -44,9 +41,9 @@ export const setSearch = (inputText: string) => (
     }
 )
 
-export const setSearchToggle = (value: boolean) => (
-  {
-      type: SET_SEARCH_TOGGLE,
+export const setSearchIsDisabled = (value: any) => (
+    {
+      type: SET_SEARCH_IS_DISABLED,
       value
     }
 )

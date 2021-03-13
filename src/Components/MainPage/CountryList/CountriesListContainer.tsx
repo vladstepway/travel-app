@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CountriesList from './CountriesList';
-import { setCountries, setSearchToggle } from '../../../redux/actionCreators/exampleActionCreator';
+import { setCountries, setSearchIsDisabled } from '../../../redux/actionCreators/exampleActionCreator';
 
 const countryFilter = function (searchInputTxt: string, countries: any) {
   let countriesCopy;
@@ -52,10 +52,9 @@ const MapStateToProps = ({
 const MapDispatchToProps = (dispatch: any) => {
   return {
     setCountries: (countriesList: any) => dispatch(setCountries(countriesList)),
-    setExcretion: (name: string, inputText: string) =>
-      excretion(name, inputText),
-      setSearchToggle : (value:boolean)=> setSearchToggle(value)
-  };
+    setSearchIsDisabled: () => dispatch(setSearchIsDisabled(false)),
+    setExcretion: (name: string, inputText: string) => excretion(name, inputText),
+  }
 };
 
 const CountryListContainer = connect(

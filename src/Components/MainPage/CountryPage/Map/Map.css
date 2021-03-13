@@ -2,3 +2,16 @@
   width: 15rem;
   height: 15rem
 }
+
+.fullscreen {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 99999;
+  background-color: red;
+}
+
+
+.fullscreen-btn {
+  z-index: 99999999;
+  position: absolute;
+}

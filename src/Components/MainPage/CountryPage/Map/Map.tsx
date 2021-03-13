@@ -1,25 +1,58 @@
-import React from "react";
-import { MapContainer, TileLayer, GeoJSON, Marker, Popup, Tooltip } from 'react-leaflet';
-import styles from './Map.module.css';
-
+import React, { useRef, useState } from "react";
+import {
+    MapContainer,
+    TileLayer,
+    GeoJSON,
+    Marker,
+    Popup,
+    Tooltip,
+} from 'react-leaflet';
+import './Map.css';
 import geojson from '../../../../data/BorderCoordinates.json';
 
+interface ICenter {
+    latitude: number
+    longitude: number
+}
 
-const Map = (props: any): any => {
+interface ICapital {
+    latitude: number
+    longitude: number
+}
 
-    const { center }: any = props.mapCoords;
-    const { capital }: any = props.mapCoords;
+interface IMapProps {
+    countryName: string
+    mapCoords: {
+        center: ICenter,
+        capital: ICapital
+
+    }
+}
+
+
+const Map = (props: IMapProps): JSX.Element => {
+    const { center } = props.mapCoords;
+    const { capital } = props.mapCoords;
     const { countryName }: any = props;
+
+    const style = "map";
+
+    const [mapClass, setMapClass] = useState(style);
 
     const mapData: any = geojson;
 
-    const onFullScrinToggle = (e: React.MouseEvent<HTMLInputElement>) => {
-        console.log(e.target);
-    };
+    function handleClick() {
+        if (mapClass.includes("fullscreen")) {
+            setMapClass(style);
+        } else {
+            setMapClass( "fullscreen");
+        }
+
+    }
 
     return (
-        <div>`
-            <MapContainer className={styles.map}
+        <div >
+            <MapContainer className={mapClass}
                           center={[center.latitude, center.longitude]}
                           zoom={3}>
                 <TileLayer
@@ -30,9 +63,9 @@ const Map = (props: any): any => {
                     <Popup>Popup for Marker</Popup>
                     <Tooltip>Tooltip for Marker</Tooltip>
                 </Marker>
-                <GeoJSON data={mapData[countryName]}/>
+                {/* <GeoJSON data={mapData[countryName]}/> */}
             </MapContainer>
-            <button type="button">123</button>
+            <button type="button" onClick={() => handleClick()}>full</button>
         </div>
 
     );

@@ -29,3 +29,24 @@ export interface IInitialStateType {
   lang: string;
   searchInput: object;
 }
+
+interface ICapital {
+  latitude: number;
+  longitude: number;
+}
+interface ICenter{
+  latitude: number;
+  longitude: number;
+}
+
+interface ImapCoords {
+    capital: ICapital;
+    center: ICenter;
+}
+
+
+export interface IMapProps {
+  countryName: string;
+  countryCapital: string;
+  mapCoords: ImapCoords;
+}

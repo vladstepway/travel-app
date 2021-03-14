@@ -177,10 +177,24 @@ export const initialState: IInitialStateType = {
                     ' where the sugar-cane industry is dominant. The interior of Viti Levu is sparsely inhabited because of its terrain.',
                 views: [
                     {
-                        imgURL: '',
-                        viewName: '',
-                        about: '',
+                        imgURL: 'https://cdnuploads.aa.com.tr/uploads/Contents/2020/08/19/thumbs_b_c_b8daaabca4cbfb4266465c17236972ca.jpg?v=184515',
+                        viewName: 'Jua le mi Pua',
+                        about: 'amounting to a total land area of about 18,300 square kilometres (7,100 sq mi). The mo',
+                    },                    {
+                        imgURL: 'https://cache.marriott.com/marriottassets/marriott/NANMC/nanmc-view-0007-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*',
+                        viewName: 'View name of FIJI',
+                        about: 'Fiji is an island country in Melanesia, part of Oceania in the South Pacific Ocean.',
+                    },                    {
+                        imgURL: 'https://noticias.mapfre.com/inc/uploads/2020/05/800-x-472-BrasilpostCovid.png',
+                        viewName: 'Berbidushka',
+                        about: 'Monterrey, Puebla, Toluca, Tijuana, Ciudad Juárez, and León.',
                     },
+                    {
+                        imgURL: 'https://cdnuploads.aa.com.tr/uploads/Contents/2020/08/19/thumbs_b_c_b8daaabca4cbfb4266465c17236972ca.jpg?v=184515',
+                        viewName: 'Puprik',
+                        about: ' 13th-largest country by area; with approximately 126,014,024 inhabitants, it is 10th',
+                    },
+                    
                 ],
                 videoURL: '',
                 mapCoords: {

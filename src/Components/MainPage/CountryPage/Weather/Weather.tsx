@@ -6,7 +6,7 @@ const { Meta } = Card;
 
 const getWeather = async (lang:string,capital:string) => {  
   console.log(capital)
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${capital}&lang=${lang ==='by'?'ua': lang}&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${capital}&lang=${lang ==='by'?'ua': lang}&appid=dd191359a921b4e3412b6d7b1fb83f95&units=metric`;
   const res = await fetch(url);
   const data = await res.json(); 
   return {id:`owf-${data.weather[0].id}`, descrition: data.weather[0].description, temp: data.main.temp};
@@ -27,12 +27,13 @@ const [{id,descrition,temp}, setWeather] = React.useState<IWeatherData>({id:'', 
 
 React.useEffect(() => {
   getWeather(lang,capital).then((data:any) => {setWeather(data)
-  })
+  }).catch(() => console.log('some error'))
 },[lang])
+
 
   return (
     <Card
-    style={{ width: 240, textAlign:'center', backgroundColor:'transparent', border:'none'}}
+    style={{ width: '240px', textAlign:'center', backgroundColor:'transparent', border:'none'}}
     cover={
       <div style = {{display:'flex',justifyContent:'center'}}>
       {id ? <i style = {{fontSize: '100px',color:`${(+(id.substring(4))>=800) ? '#FFA570' : '#bde0fe'}`}}  className={`${css.weatherIcon} ${css.owf} ${css[id]}`}/> : <Spin style = {{width:'100px'}} size="large" />}

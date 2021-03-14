@@ -12,9 +12,6 @@
         font-weight: normal;
         font-style: normal;
     }
-    /* .weatherIcon {
-    color: #C0A99D;
-} */
     
     i:hover {
         animation: shake 1.5s;

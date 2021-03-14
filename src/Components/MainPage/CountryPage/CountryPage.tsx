@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
 import './CountryPage.module.css';
+import Gallery from './Gallery/Gallery';
 
 const CountryPage = function (props: any) {
   const { country } = props;
-  const { mapCoords } = country.details;
+
+  const { mapCoords, views } = country.details;
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   function handleClick() {
@@ -27,6 +29,7 @@ const CountryPage = function (props: any) {
                   mapCoords={mapCoords}/>}
 
       </div>
+      <Gallery views={views} />
     </div>
   );
 };

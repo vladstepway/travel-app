@@ -1,25 +1,28 @@
 import { connect } from 'react-redux';
 import CountryPage from './CountryPage';
-import { setCountries } from '../../../redux/actionCreators/exampleActionCreator';
-import {ICountries} from '../../../Interfaces'; 
+import { setCountries, setSearchIsDisabled } from '../../../redux/actionCreators/exampleActionCreator';
+import { ICountries } from '../../../Interfaces';
 
 
 
-const MapStateToProps = function (state: any, { link }: any) {
+const MapStateToProps = (state: any, { link }: any) => {
+
   return {
+    lang : state.langReducer.lang,
     country: state.countryReducer.countries.find(
-
       (el: any) =>
-  el.name.toLowerCase() === link.toLowerCase()
+        el.name.toLowerCase() === link.toLowerCase()
     ),
   };
 };
 
-const MapDispatchToProps = function (dispatch: any) {
-  return {
+const MapDispatchToProps = (dispatch: any) => (
+  {
+
     setCountries: (countriesList: ICountries[]) => dispatch(setCountries(countriesList)),
-  };
-};
+    setSearchIsDisabled: () => dispatch(setSearchIsDisabled(true))
+  }
+);
 
 const CountryListContainer = connect(
   MapStateToProps,

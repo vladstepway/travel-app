@@ -1,23 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
-import { Card, Col, Row, Avatar } from 'antd';
+import {Card, Col, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
-import css from './CountriesList.module.css';
 
 const { Meta } = Card
 
-const CountriesList = function ({ countriesList,text,setExcretion,setSearchToggle}: any) {
+const CountriesList = function ({ countriesList,text,setExcretion,setSearchIsDisabled}: any) {
 
 	const { t } = useTranslation();
 
+	useEffect(() => {
+		setSearchIsDisabled()
+	}, [])
+
 	const list = countriesList.map((el:any) =>{
+		
 		return (
 		<Col span={4} key={el.name}>
 			<Card
 				hoverable
 				style={{ width: '200px' }}
 				cover={
-					<NavLink to={`/${el.name}`} id={el.name} onClick={()=>setSearchToggle(true)}>
+					<NavLink to={`/${el.name}`} id={el.name} onClick = {()=>{setSearchIsDisabled(true)}} >
 						<img style={{ width: '200px', height: '200px', objectFit: 'cover' }}
 							alt="example"
 							src={el.photo}
@@ -34,6 +38,7 @@ const CountriesList = function ({ countriesList,text,setExcretion,setSearchToggl
 				/>
 
 			</Card>
+
 		</Col>
 	)}
 	)

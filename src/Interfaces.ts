@@ -21,13 +21,13 @@ export interface ICountries {
 
 export interface ISearchInput {
   text:string,
-  enabled:boolean
+  disabled:boolean
 }
 
 export interface IInitialStateType {
   countries: ICountries[];
   lang: string;
-  searchInput: object;
+  searchInput: ISearchInput;
 }
 
 interface ICapital {

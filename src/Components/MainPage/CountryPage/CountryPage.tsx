@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
 import './CountryPage.module.css';
+import Weather from './Weather/Weather'
 import Gallery from './Gallery/Gallery';
 
-const CountryPage = function (props: any) {
-  const { country } = props;
-
+const CountryPage =  (props: any) => {
+  const { lang, country, setSearchIsDisabled } = props;
   const { mapCoords, views } = country.details;
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   function handleClick() {
-      !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
-  }
+    !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
+}
+
+  React.useEffect(()=>{
+    setSearchIsDisabled()
+  },[props])
   return (
     <div>
       <img src={country.photo} alt="" />
@@ -30,6 +34,8 @@ const CountryPage = function (props: any) {
 
       </div>
       <Gallery views={views} />
+      <Weather lang={lang} capital = {country.capital}/>
+
     </div>
   );
 };

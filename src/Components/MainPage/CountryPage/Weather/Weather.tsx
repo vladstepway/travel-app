@@ -1,5 +1,5 @@
 import React from 'react';
-import { Result, Spin, Space, Card } from 'antd';
+import {Spin,Card } from 'antd';
 import css from  './Weather.module.css'
 
 const { Meta } = Card;

@@ -16,7 +16,7 @@ const Header = function () {
     i18n.changeLanguage(lang.value);
   };
 
-
+  
   return (<>
     <Row wrap justify="center" style={{background:'#FFD97D'}}>
       <Col flex={2} style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}><img style={{width:'120px', height:'auto'}} src={logo} /></Col>

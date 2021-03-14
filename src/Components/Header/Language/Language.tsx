@@ -10,7 +10,8 @@ interface ILanguage {
 }
 
 const Language = ({lang,setLanguage,onLanguageChange}:ILanguage) => {
-const [currentLang, setCurrentLang] = React.useState(lang)
+const [currentLang, setCurrentLang] = React.useState(lang);
+
 React.useEffect(()=>{
     setCurrentLang(lang)
 },[lang])
@@ -20,8 +21,9 @@ React.useEffect(()=>{
         labelInValue
         style={{ width: 120 }}
         onChange={(e:any)=>{
-         setLanguage(e.value)
-         onLanguageChange(e)
+         setLanguage(e.value);
+         onLanguageChange(e);
+
           }}
       >
         <Option value="ru">Rus</Option>

@@ -14,6 +14,7 @@ export interface IDetails {
 export interface ICountries {
   name: string;
   capital: string;
+  currencyCode: string,
   details: IDetails;
   rating: any;
   photo: string;
@@ -49,4 +50,8 @@ export interface IMapProps {
   countryName: string;
   countryCapital: string;
   mapCoords: ImapCoords;
+}
+
+export interface ICurrenciesProps {
+  currency: string;
 }

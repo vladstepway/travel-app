@@ -11,6 +11,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'Germany',
             capital: 'Berlin',
+            currencyCode: 'EUR',
             details: {
                 info: 'Germany is a country at the intersection of Central and Western Europe.' +
                     ' It is situated between the Baltic and North seas to the north, ' +
@@ -40,6 +41,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'India',
             capital: 'New Delhi',
+            currencyCode: 'INR',
             details: {
                 info: 'India  is a country in South Asia. It is the second-most populous country, ' +
                     'the seventh-largest country by land area, and the most populous democracy in the world.' +
@@ -67,6 +69,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'Brazil',
             capital: 'Brasília',
+            currencyCode: 'BRL',
             details: {
                 info: 'Brazil is the largest country in both South America and Latin America. At 8.5 million square kilometers (3.2 million square miles)' +
                     ' and with over 211 million people, Brazil is the world\'s fifth-largest country by area and the sixth most populous.' +
@@ -94,6 +97,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'North-Korea',
             capital: 'Pyongyang',
+            currencyCode: 'KPW',
             details: {
                 info: 'North Korea is a country in East Asia constituting the northern part of the Korean Peninsula.' +
                     ' The country is bordered to the north by China and by Russia along the Amnok (known as the Yalu in Chinese) and Tumen rivers,' +
@@ -119,6 +123,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'Norway',
             capital: 'Oslo',
+            currencyCode: 'NOK',
             details: {
                 info: 'Norway is a Nordic country in Northern Europe whose mainland territory comprises the western and northernmost portion of the Scandinavian Peninsula.' +
                     ' The remote Arctic island of Jan Mayen and the archipelago of Svalbard also form part of Norway.[note 1] Bouvet Island,' +
@@ -143,6 +148,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'Nigeria',
             capital: 'Abuja',
+            currencyCode: 'NGN',
             details: {
                 info: 'Nigeria is a country in West Africa bordering Niger in the north, Chad in the northeast,' +
                     ' Cameroon in the east, and Benin in the west. Its southern coast is on the Gulf of Guinea in the Atlantic Ocean.' +
@@ -168,6 +174,7 @@ export const initialState: IInitialStateType = {
         {
             name: 'Fiji',
             capital: 'Suva',
+            currencyCode: 'FJD',
             details: {
                 info: 'Fiji is an island country in Melanesia, part of Oceania in the South Pacific Ocean. It lies about 1,100 nautical miles (2,000 km; 1,300 mi)' +
                     ' northeast of New Zealand. Fiji consists of an archipelago of more than 330 islands—of which about 110 are permanently inhabited—and more than 500 islets,' +
@@ -194,6 +201,7 @@ export const initialState: IInitialStateType = {
         }, {
             name: 'Mexico',
             capital: 'Mexico City',
+            currencyCode: 'MXN',
             details: {
                 info: 'Mexico is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and west by the Pacific Ocean;' +
                     ' to the southeast by Guatemala, Belize, and the Caribbean Sea; and to the east by the Gulf of Mexico. Mexico covers 1,972,550 square kilometers (761,610 sq mi)' +

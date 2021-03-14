@@ -9,10 +9,9 @@ import {
 } from 'react-leaflet';
 import './SmallScreen.css';
 import geojson from '../../../../../data/BorderCoordinates.json';
-// import { IMapProps } from "../../../../../Interfaces";
+import { IMapProps } from "../../../../../Interfaces";
 
-const SmallScreenMap = (props: any): JSX.Element => {
-    console.log(props);
+const SmallScreenMap = (props: IMapProps): JSX.Element => {
     const { center } = props.mapCoords;
     const { capital } = props.mapCoords;
     const { countryName }: any = props;

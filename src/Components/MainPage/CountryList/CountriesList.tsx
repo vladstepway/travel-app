@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
-import {Card, Col, Row, Avatar } from 'antd';
+import {Card, Col, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 const { Meta } = Card

@@ -4,17 +4,19 @@ import { Select } from 'antd';
 const { Option } = Select;
 
 interface ILanguage {
-  onLanguageChange: (lang: string) => void;
+  setLanguage: (lang: string) => void
 }
 
-const Language: React.FC<ILanguage> = (props: ILanguage) => {
+const Language = ({lang,setLanguage}:any) => {
   return (
     <>
-      <Select
+      <Select 
         labelInValue
-        defaultValue="ru"
+        defaultValue={lang}
         style={{ width: 120 }}
-        onChange={props.onLanguageChange}
+        onChange={(e)=>{
+         setLanguage(e.value);
+          }}
       >
         <Option value="ru">Rus</Option>
         <Option value="en">Eng</Option>

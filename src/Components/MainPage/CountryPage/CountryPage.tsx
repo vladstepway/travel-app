@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { FullscreenOutlined } from '@ant-design/icons';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
-import './CountryPage.module.css';
-import Weather from './Weather/Weather'
+import Currencies from './Currencies/Currencies';
+import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
+import './CountryPage.module.css';
 
 const CountryPage =  (props: any) => {
   const { lang, country, setSearchIsDisabled } = props;
@@ -15,13 +17,14 @@ const CountryPage =  (props: any) => {
 }
 
   React.useEffect(()=>{
-    setSearchIsDisabled()
-  },[props])
+    setSearchIsDisabled();
+  },[props]);
   return (
     <div>
       <img src={country.photo} alt="" />
-      <div>
-          <button type="button" onClick={handleClick}>[]</button>
+        <div>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+          <button type="button" onClick={handleClick} ><FullscreenOutlined /></button>
           {isFullScreen
               ? <SmallScreenMap
                   countryCapital={country.capital}
@@ -32,10 +35,10 @@ const CountryPage =  (props: any) => {
                   countryName={country.name}
                   mapCoords={mapCoords}/>}
 
-      </div>
+        </div>
+       <Currencies currency={country.currencyCode}/>
       <Gallery views={views} />
       <Weather lang={lang} capital = {country.capital}/>
-
     </div>
   );
 };

@@ -8,7 +8,7 @@ const CountryPage =  (props: any) => {
   const { mapCoords } = country.details;
   React.useEffect(()=>{
     setSearchIsDisabled()
-  },[])
+  },[props])
   return (
     <div>
       <img src={country.photo} alt="" />

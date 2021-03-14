@@ -14,11 +14,9 @@ const searchReducer = (state = initialState, action: SearchActionType) => {
     case SET_SEARCH:
       stateCopy.searchInput.text = action.inputText;
       return stateCopy;
-
     case SET_SEARCH_IS_DISABLED:
       stateCopy.searchInput.disabled = action.value;
       return stateCopy;
-
     default:
       return state;
   }

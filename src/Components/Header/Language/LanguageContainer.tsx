@@ -10,10 +10,11 @@ const MapStateToProps = (state:any) => {
   })
 }
 
-const MapDispatchToProps = (dispatch: any, props:any) => (
+const MapDispatchToProps = (dispatch: any, {onLanguageChange}:any) => (
   {
-    setLanguage: (value: any) => dispatch(setLanguage(value)),
-    onLanguageChange: () => props.onLanguageChange()
+    setLanguage: (e: string) => {
+      dispatch(setLanguage(e))},
+    onLanguageChange: (e: any) => onLanguageChange(e)
   }
   );
 

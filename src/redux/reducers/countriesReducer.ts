@@ -8,7 +8,6 @@ const countryReducer = (state = initialState, action: any) => {
     case SET_COUNTRIES:
       stateCopy.countries = [...action.countries];
       return stateCopy;
-
     case SET_COUNTRY:
       return stateCopy;
     default:

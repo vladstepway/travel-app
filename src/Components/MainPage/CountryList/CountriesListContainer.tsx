@@ -40,9 +40,7 @@ const excretion = (name: string, inputText: string) => {
   );
 };
 
-const MapStateToProps = ({
-  countryReducer: { searchInput:{text}, countries },
-}: any) => {
+const MapStateToProps = ({searchReducer:{text},countryReducer:{countries}}:any) => {
   return {
     countriesList: countryFilter(text, countries),
     text,

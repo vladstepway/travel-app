@@ -27,8 +27,6 @@ export interface ISearchInput {
 
 export interface IInitialStateType {
   countries: ICountries[];
-  lang: string;
-  searchInput: ISearchInput;
 }
 
 interface ICapital {

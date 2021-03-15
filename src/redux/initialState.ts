@@ -68,7 +68,7 @@ export const initialState: IInitialStateType = {
         },
         {
             name: 'Brazil',
-            capital: 'Brasília',
+            capital: 'Brasilia',
             currencyCode: 'BRL',
             details: {
                 info: 'Brazil is the largest country in both South America and Latin America. At 8.5 million square kilometers (3.2 million square miles)' +
@@ -201,7 +201,7 @@ export const initialState: IInitialStateType = {
                         viewName: 'Puprik',
                         about: ' 13th-largest country by area; with approximately 126,014,024 inhabitants, it is 10th',
                     },
-                    
+
                 ],
                 videoURL: '',
                 mapCoords: {

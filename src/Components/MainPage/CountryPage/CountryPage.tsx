@@ -5,6 +5,7 @@ import FullScreenMap from './Map/BigMap/FullScreenMap';
 import Currencies from './Currencies/Currencies';
 import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
+import DateAndTime from './Date/DateAndTime';
 import './CountryPage.module.css';
 
 const CountryPage =  (props: any) => {
@@ -39,6 +40,7 @@ const CountryPage =  (props: any) => {
        <Currencies currency={country.currencyCode}/>
       <Gallery views={views} />
       <Weather lang={lang} capital = {country.capital}/>
+      <DateAndTime country={country.name} city={country.capital}/>
     </div>
   );
 };

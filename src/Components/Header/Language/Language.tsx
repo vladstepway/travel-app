@@ -1,34 +1,37 @@
 import React from 'react';
 import { Select } from 'antd';
+import css from './Language.module.css'
 
 const { Option } = Select;
 
 interface ILanguage {
-  lang: string;
+  lang:string;
   onLanguageChange: (lang: string) => void;
   setLanguage: (lang: string) => any;
 }
 
-const Language = ({ lang, setLanguage, onLanguageChange }: ILanguage) => {
-  const [currentLang, setCurrentLang] = React.useState(lang);
+const Language = ({lang,setLanguage,onLanguageChange}:ILanguage) => {
+const [currentLang, setCurrentLang] = React.useState(lang);
 
-  React.useEffect(() => {
-    setCurrentLang(lang);
-  }, [lang]);
+React.useEffect(()=>{
+    setCurrentLang(lang)
+},[lang])
   return (
     <>
-      <Select
+      <Select 
+        size = 'small'
         labelInValue
-        style={{ width: 120 }}
-        onChange={(e: any) => {
-          setLanguage(e.value);
-          onLanguageChange(e);
-        }}
+        className = {css.selectBlock}
+        onChange={(e:any)=>{
+         setLanguage(e.value);
+         onLanguageChange(e);
+
+          }}
       >
-        <Option value="ru">Rus</Option>
-        <Option value="en">Eng</Option>
-        <Option value="by">Bel</Option>
-      </Select>
+        <Option className={css.optionBlock} value="ru">Rus</Option>
+        <Option className={css.optionBlock} value="en">Eng</Option>
+        <Option className={css.optionBlock} value="by">Bel</Option>
+      </Select> 
     </>
   );
 };

@@ -34,60 +34,63 @@ const Currencies = (props: ICurrenciesProps) => {
         }
       });
   }, []);
-
-  return (
-    // <Row style={{ border: "solid 1px #222222" }} gutter={6}>
-    //     <Col span={2}>
-    //         <Statistic title="EUR" value={currenciesRates.EUR}
-    //                    precision={4}/>
-    //     </Col>
-    //     <Col span={2}>
-    //         <Statistic title="USD" value={currenciesRates.USD}
-    //                    precision={4}/>
-    //     </Col>
-    //     <Col span={2}>
-    //         <Statistic title="BYN" value={currenciesRates.BYN}
-    //                    precision={4}/>
-    //     </Col>
-    // </Row>
-    <div className="site-statistic-demo-card">
-      <Row gutter={12}>
-        <Col span={3}>
-          <Card>
-            <Statistic
-              title="EUR"
-              value={currenciesRates.EUR}
-              precision={4}
-              valueStyle={{ color: '#3f8600' }}
-              suffix="€"
-            />
-          </Card>
-        </Col>
-        <Col span={3}>
-          <Card>
-            <Statistic
-              title="USD"
-              value={currenciesRates.USD}
-              precision={4}
-              valueStyle={{ color: '#3f8600' }}
-              suffix="$"
-            />
-          </Card>
-        </Col>
-        <Col span={3}>
-          <Card>
-            <Statistic
-              title="BYN"
-              value={currenciesRates.BYN}
-              precision={4}
-              valueStyle={{ color: '#3f8600' }}
-              suffix="Br"
-            />
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  );
+  
+    return (
+            // <Row style={{ border: "solid 1px #222222" }} gutter={6}>
+            //     <Col span={2}>
+            //         <Statistic title="EUR" value={currenciesRates.EUR}
+            //                    precision={4}/>
+            //     </Col>
+            //     <Col span={2}>
+            //         <Statistic title="USD" value={currenciesRates.USD}
+            //                    precision={4}/>
+            //     </Col>
+            //     <Col span={2}>
+            //         <Statistic title="BYN" value={currenciesRates.BYN}
+            //                    precision={4}/>
+            //     </Col>
+            // </Row>
+        <div style = {{display:'flex', justifyContent: 'center', marginTop:'auto'}} className="site-statistic-demo-card">
+            <Col>
+                <Row >
+                    <Card>
+                        <Statistic
+                        style={{minWidth:'100px'}}
+                            title="EUR"
+                            value={currenciesRates.EUR}
+                            precision={4}
+                            valueStyle={{ color: '#3f8600' }}
+                            suffix="€"
+                        />
+                    </Card>
+                </Row>
+                <Row >
+                    <Card>
+                        <Statistic
+                        style={{minWidth:'100px'}}
+                            title="USD"
+                            value={currenciesRates.USD}
+                            precision={4}
+                            valueStyle={{ color: '#3f8600' }}
+                            suffix="$"
+                        />
+                    </Card>
+                </Row>
+                <Row >
+                    <Card>
+                        <Statistic
+                        style={{minWidth:'100px'}}
+                            title="BYN"
+                            value={currenciesRates.BYN}
+                            precision={4}
+                            valueStyle={{ color: '#3f8600' }}
+                            suffix="Br"
+                        />
+                    </Card>
+                </Row>
+            </Col>
+        </div>
+    );
 };
 
 export default Currencies;

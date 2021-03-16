@@ -4,6 +4,7 @@ import CountryListContainer from './CountryList/CountriesListContainer';
 import CountryPageContainer from './CountryPage/CountryPageContainer';
 
 const Page = () => {
+
   return (
     <div style={{ minHeight: '60vh' }}>
       <Switch>

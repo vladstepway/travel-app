@@ -125,6 +125,7 @@ function Gallery(props: any) {
       <div className="thumbnail-slider-wrap">
         <Slider
           {...settingsThumbs}
+        
           asNavFor={nav1}
           ref={(slider: any) => setSlider2(slider)}
         >

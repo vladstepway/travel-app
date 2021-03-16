@@ -19,7 +19,7 @@ enum Regions {
   Oslo = 'Europe/Oslo',
   Abuja = 'Europe/Oslo',
   Suva = 'Pacific/Nauru',
-  MexicoCity = 'America/Mexico_City',
+  MexicoCity = 'America/Mexico_City'
 }
 
 const DateAndTime = (props: IDateProps): JSX.Element => {

@@ -18,7 +18,7 @@ const App: FC = () => (
             <Content>
                 <MainPage/>
             </Content>
-            <Footer style ={{marginTop:'auto'}}><FooterInner/> </Footer>
+            <Footer style ={{background: '#FFD97D', display:'flex'}}><FooterInner/> </Footer>
             </Layout>
             </>
     );

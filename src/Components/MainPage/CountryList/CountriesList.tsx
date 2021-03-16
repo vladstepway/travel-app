@@ -15,16 +15,17 @@ const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled } :
 	const list = countriesList.map((el:any) =>{	
 		return (
 		<Col  span={6}  xs = {{span:16}} sm= {{span:12}} md ={{span:8}} lg = {{span:6}} style={{ marginTop:'20px',display:'flex', justifyContent:'center'}} key={el.name}>
+			<NavLink to={`/${el.name}`} id={el.name} onClick = {()=>{setSearchIsDisabled(true)}} >
 			<Card
 				hoverable
 				style={{ width: '200px' }}
 				cover={
-					<NavLink to={`/${el.name}`} id={el.name} onClick = {()=>{setSearchIsDisabled(true)}} >
+				
 						<img style={{ width: '200px', height: '200px', objectFit: 'cover' }}
 							alt="example"
 							src={el.photo}
 						/>
-					</NavLink>
+		
 				}
 			>
 				<Meta style={{ textAlign: 'center' }}
@@ -32,6 +33,7 @@ const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled } :
 					description={setExcretion(t(`capital.${el.name}`),text)}
 				/>
 			</Card>
+			</NavLink>
 		</Col>
 	)}
 	)

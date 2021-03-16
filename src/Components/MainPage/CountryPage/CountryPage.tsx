@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { FullscreenOutlined } from '@ant-design/icons';
+import {Typography} from 'antd';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
 import Currencies from './Currencies/Currencies';
 import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
 import css from './CountryPage.module.css';
+
+
+const { Text } = Typography;
 
 const CountryPage =  (props: any) => {
   const { lang, country, setSearchIsDisabled } = props;
@@ -33,7 +37,7 @@ const CountryPage =  (props: any) => {
                   countryCapital={country.capital}
                   countryName={country.name}
                   mapCoords={mapCoords}/>}
-
+                  <div>Date</div>
         </div>
 
 <div className={css.gallery}><Gallery views={views} /></div>
@@ -42,7 +46,7 @@ const CountryPage =  (props: any) => {
         <Currencies currency={country.currencyCode}/>
        </div>
 </div>
-<div className={css.bottomBlock}><div className={css.video}>video</div><div className={css.info}>{info}</div></div>
+<div className={css.bottomBlock}><div className={css.video}>video</div><div className={css.info}><Text>{info}</Text></div></div>
 </div>
   );
 };

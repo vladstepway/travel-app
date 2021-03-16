@@ -19,17 +19,7 @@ const DateAndTime = (props: IDateProps): JSX.Element => {
     const { city, lang }: any = props;
 
 
-    //
-    // if(lang === 'ru') {
-    //     setWeekDays(daysObj.RU);
-    //     setMonths(monthsObj.RU);
-    // } else if (lang === 'en') {
-    //     setWeekDays(daysObj.ENG);
-    //     setMonths(monthsObj.ENG);
-    // } else {
-    //     setWeekDays(daysObj.BY);
-    //     setMonths(monthsObj.BY);
-    // }
+
 
 
     const C = city.split(' ').join('');
@@ -39,7 +29,7 @@ const DateAndTime = (props: IDateProps): JSX.Element => {
 
 
     return (<Row gutter={12} style={{ margin: "5px" }}>
-            <Date reg={reg}
+            <Date reg={reg} lang={lang}
             />
             <Col span={4}>
                 <Clock reg={reg}/>

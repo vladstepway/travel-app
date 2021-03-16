@@ -5,9 +5,12 @@ import { daysObj, monthsObj } from "../DataForDateAndTime";
 
 interface IDateProps {
     reg: string;
+    lang: string;
 }
 
 const Date = (props: IDateProps): JSX.Element => {
+
+    const { reg, lang } = props;
 
     const [weekDay, setWeekDay] = useState('-');
     const [day, setDay] = useState(1);
@@ -16,13 +19,20 @@ const Date = (props: IDateProps): JSX.Element => {
     const [weekdays, setWeekDays]: any = useState(daysObj.ENG);
     const [months, setMonths]: any = useState(monthsObj.ENG);
 
-    const { reg } = props;
-
-
     useEffect(() => {
+
+        if(lang === 'ru') {
+            setWeekDays(daysObj.RU);
+            setMonths(monthsObj.RU);
+        } else if (lang === 'en') {
+            setWeekDays(daysObj.ENG);
+            setMonths(monthsObj.ENG);
+        } else {
+            setWeekDays(daysObj.BY);
+            setMonths(monthsObj.BY);
+        }
+
         const dt = new window.Date().toLocaleString("en-US", { timeZone: `${reg}` });
-        console.log(new window.Date());
-        console.log(dt);
 
         const currentDayNumber: any = dt.slice(2, 4);
         const currentMonthNumber: any = dt[0];
@@ -31,7 +41,8 @@ const Date = (props: IDateProps): JSX.Element => {
         setDay(currentDayNumber);
         setMonth(months[currentMonthNumber]);
         setWeekDay(weekdays[currentDayOfWeekNumber]);
-    }, []);
+        console.log(weekdays);
+    }, [weekdays, months, lang]);
 
     return <>
         <Col span={4}>

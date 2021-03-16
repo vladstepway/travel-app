@@ -59,7 +59,7 @@ const Currencies = (props: ICurrenciesProps) => {
                 <Col span={3}>
                     <Card>
                         <Statistic
-                            title="EUR"
+                            title={`${currency}/EUR`}
                             value={currenciesRates.EUR}
                             precision={4}
                             valueStyle={{ color: '#3f8600' }}
@@ -70,7 +70,7 @@ const Currencies = (props: ICurrenciesProps) => {
                 <Col span={3}>
                     <Card>
                         <Statistic
-                            title="USD"
+                            title={`${currency}/USD`}
                             value={currenciesRates.USD}
                             precision={4}
                             valueStyle={{ color: '#3f8600' }}
@@ -81,7 +81,7 @@ const Currencies = (props: ICurrenciesProps) => {
                 <Col span={3}>
                     <Card>
                         <Statistic
-                            title="BYN"
+                            title={`${currency}/BYN`}
                             value={currenciesRates.BYN}
                             precision={4}
                             valueStyle={{ color: '#3f8600' }}

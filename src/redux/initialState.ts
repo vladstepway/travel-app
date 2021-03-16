@@ -203,7 +203,7 @@ export const initialState: IInitialStateType = {
                     },
                     
                 ],
-                videoURL: '',
+                videoURL: 'https://www.youtube.com/watch?v=JRaakIL-N_s',
                 mapCoords: {
                   center: { latitude: -17.4624892, longitude: 179.2583049 },
                   capital: { latitude: -18.14159, longitude: 178.44217 }

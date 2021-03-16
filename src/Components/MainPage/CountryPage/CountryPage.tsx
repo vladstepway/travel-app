@@ -5,11 +5,12 @@ import FullScreenMap from './Map/BigMap/FullScreenMap';
 import Currencies from './Currencies/Currencies';
 import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
+import Video from './Video/Video';
 import './CountryPage.module.css';
 
 const CountryPage =  (props: any) => {
   const { lang, country, setSearchIsDisabled } = props;
-  const { mapCoords, views } = country.details;
+  const { mapCoords, views, videoURL } = country.details;
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   function handleClick() {
@@ -38,6 +39,7 @@ const CountryPage =  (props: any) => {
         </div>
        <Currencies currency={country.currencyCode}/>
       <Gallery views={views} />
+      <Video url={videoURL} />
       <Weather lang={lang} capital = {country.capital}/>
     </div>
   );

@@ -34,16 +34,12 @@ export const setLanguage = (lang: string) => {
   };
 };
 
-export const setSearch = (inputText: string) => (
-  {
-      type: SET_SEARCH,
-      inputText
-    }
-)
+export const setSearch = (inputText: string) => ({
+  type: SET_SEARCH,
+  inputText,
+});
 
-export const setSearchIsDisabled = (value: any) => (
-    {
-      type: SET_SEARCH_IS_DISABLED,
-      value
-    }
-)
+export const setSearchIsDisabled = (value: any) => ({
+  type: SET_SEARCH_IS_DISABLED,
+  value,
+});

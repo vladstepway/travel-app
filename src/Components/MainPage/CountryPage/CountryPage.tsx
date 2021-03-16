@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import { FullscreenOutlined } from '@ant-design/icons';
 import {Typography} from 'antd';
+import css from './CountryPage.module.css';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
 import Currencies from './Currencies/Currencies';
 import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
-import css from './CountryPage.module.css';
-
+import Video from './Video/Video';
+import DateAndTime from './Date/DateAndTime';
 
 const { Text } = Typography;
-
-const CountryPage =  (props: any) => {
+const CountryPage = (props: any) => {
   const { lang, country, setSearchIsDisabled } = props;
-  const { mapCoords, views,info } = country.details;
+  const { mapCoords, views,info,videoURL } = country.details;
   const [isFullScreen, setIsFullScreen] = useState(true);
 
   function handleClick() {
     !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
-}
-
-  React.useEffect(()=>{
+  }
+  React.useEffect(() => {
     setSearchIsDisabled();
   },[props]);
   return (<div className = {css.wrapper}>
@@ -37,7 +36,7 @@ const CountryPage =  (props: any) => {
                   countryCapital={country.capital}
                   countryName={country.name}
                   mapCoords={mapCoords}/>}
-                  <div>Date</div>
+                  <DateAndTime country={country.name} city={country.capital} />
         </div>
 
 <div className={css.gallery}><Gallery views={views} /></div>
@@ -46,7 +45,7 @@ const CountryPage =  (props: any) => {
         <Currencies currency={country.currencyCode}/>
        </div>
 </div>
-<div className={css.bottomBlock}><div className={css.video}>video</div><div className={css.info}><Text>{info}</Text></div></div>
+<div className={css.bottomBlock}><div className={css.video}><Video url={videoURL} /></div><div className={css.info}><Text>{info}</Text></div></div>
 </div>
   );
 };

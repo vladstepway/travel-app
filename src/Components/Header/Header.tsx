@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 import Icon from '@ant-design/icons';
 import PandaSvg from './Panda'
 import LanguageContainer from './Language/LanguageContainer';
-import logo from '../../Img/logo.png';
 import SearchContainer from './Search/SearchContainer'
+import logo from '../../Img/logo.png';
 import 'antd/dist/antd.css';
 import './Header.css'
 

@@ -63,7 +63,6 @@ function Gallery(props: any) {
     swipeToSlide: true,
     asNavFor: nav1,
     speed: 600,
-
   };
 
   const settingsThumbs = {

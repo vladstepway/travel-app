@@ -5,42 +5,49 @@ import FullScreenMap from './Map/BigMap/FullScreenMap';
 import Currencies from './Currencies/Currencies';
 import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
+import Video from './Video/Video';
 import DateAndTime from './Date/DateAndTime';
 import './CountryPage.module.css';
 
-const CountryPage =  (props: any) => {
+const CountryPage = (props: any) => {
   const { lang, country, setSearchIsDisabled } = props;
-  const { mapCoords, views } = country.details;
+  const { mapCoords, views, videoURL } = country.details;
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   function handleClick() {
     !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
-}
+  }
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     setSearchIsDisabled();
-  },[props]);
+  }, [props]);
   return (
     <div>
       <img src={country.photo} alt="" />
-        <div>
-            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-          <button type="button" onClick={handleClick} ><FullscreenOutlined /></button>
-          {isFullScreen
-              ? <SmallScreenMap
-                  countryCapital={country.capital}
-                  countryName={country.name}
-                  mapCoords={mapCoords}/>
-              :  <FullScreenMap
-                  countryCapital={country.capital}
-                  countryName={country.name}
-                  mapCoords={mapCoords}/>}
-
-        </div>
-       <Currencies currency={country.currencyCode}/>
+      <div>
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <button type="button" onClick={handleClick}>
+          <FullscreenOutlined />
+        </button>
+        {isFullScreen ? (
+          <SmallScreenMap
+            countryCapital={country.capital}
+            countryName={country.name}
+            mapCoords={mapCoords}
+          />
+        ) : (
+          <FullScreenMap
+            countryCapital={country.capital}
+            countryName={country.name}
+            mapCoords={mapCoords}
+          />
+        )}
+      </div>
+      <Currencies currency={country.currencyCode} />
       <Gallery views={views} />
-      <Weather lang={lang} capital = {country.capital}/>
-      <DateAndTime country={country.name} city={country.capital}/>
+      <Video url={videoURL} />
+      <Weather lang={lang} capital={country.capital} />
+      <DateAndTime country={country.name} city={country.capital} />
     </div>
   );
 };

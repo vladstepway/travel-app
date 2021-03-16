@@ -14,15 +14,15 @@ export interface IDetails {
 export interface ICountries {
   name: string;
   capital: string;
-  currencyCode: string,
+  currencyCode: string;
   details: IDetails;
   rating: any;
   photo: string;
 }
 
 export interface ISearchInput {
-  text:string,
-  disabled:boolean
+  text: string;
+  disabled: boolean;
 }
 
 export interface IInitialStateType {
@@ -35,16 +35,15 @@ interface ICapital {
   latitude: number;
   longitude: number;
 }
-interface ICenter{
+interface ICenter {
   latitude: number;
   longitude: number;
 }
 
 interface ImapCoords {
-    capital: ICapital;
-    center: ICenter;
+  capital: ICapital;
+  center: ICenter;
 }
-
 
 export interface IMapProps {
   countryName: string;

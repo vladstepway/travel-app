@@ -26,4 +26,3 @@ const renderer = () => {
 renderer();
 
 store.subscribe(renderer);
-

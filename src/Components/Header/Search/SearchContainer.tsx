@@ -2,24 +2,21 @@ import { connect } from 'react-redux';
 import Search from './Search';
 import { setSearch } from '../../../redux/actionCreators/exampleActionCreator';
 
-const MapStateToProps = ({countryReducer:{searchInput:{text,disabled}}}: any) => {
+const MapStateToProps = ({
+  countryReducer: {
+    searchInput: { text, disabled },
+  },
+}: any) => {
+  return {
+    text,
+    disabled,
+  };
+};
 
-  return(
-  {
-    text,disabled
-  }
-  )
-}
+const MapDispatchToProps = (dispatch: any) => ({
+  setInputText: (inputText: string) => dispatch(setSearch(inputText)),
+});
 
-const MapDispatchToProps = (dispatch: any) => (
-  {
-    setInputText: (inputText: string) => dispatch(setSearch(inputText))
-  }
-  );
-
-const SearchContainer = connect(
-  MapStateToProps,
-  MapDispatchToProps
-)(Search);
+const SearchContainer = connect(MapStateToProps, MapDispatchToProps)(Search);
 
 export default SearchContainer;

@@ -4,27 +4,26 @@ import { Select } from 'antd';
 const { Option } = Select;
 
 interface ILanguage {
-  lang:string;
+  lang: string;
   onLanguageChange: (lang: string) => void;
   setLanguage: (lang: string) => any;
 }
 
-const Language = ({lang,setLanguage,onLanguageChange}:ILanguage) => {
-const [currentLang, setCurrentLang] = React.useState(lang);
+const Language = ({ lang, setLanguage, onLanguageChange }: ILanguage) => {
+  const [currentLang, setCurrentLang] = React.useState(lang);
 
-React.useEffect(()=>{
-    setCurrentLang(lang)
-},[lang])
+  React.useEffect(() => {
+    setCurrentLang(lang);
+  }, [lang]);
   return (
     <>
-      <Select 
+      <Select
         labelInValue
         style={{ width: 120 }}
-        onChange={(e:any)=>{
-         setLanguage(e.value);
-         onLanguageChange(e);
-
-          }}
+        onChange={(e: any) => {
+          setLanguage(e.value);
+          onLanguageChange(e);
+        }}
       >
         <Option value="ru">Rus</Option>
         <Option value="en">Eng</Option>

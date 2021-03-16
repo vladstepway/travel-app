@@ -54,11 +54,12 @@ const Currencies = (props: ICurrenciesProps) => {
             //                    precision={4}/>
             //     </Col>
             // </Row>
-        <div className="site-statistic-demo-card">
-            <Row gutter={12}>
-                <Col span={3}>
+        <div style = {{display:'flex', justifyContent: 'center', marginTop:'auto'}} className="site-statistic-demo-card">
+            <Col>
+                <Row >
                     <Card>
                         <Statistic
+                        style={{minWidth:'100px'}}
                             title="EUR"
                             value={currenciesRates.EUR}
                             precision={4}
@@ -66,10 +67,11 @@ const Currencies = (props: ICurrenciesProps) => {
                             suffix="€"
                         />
                     </Card>
-                </Col>
-                <Col span={3}>
+                </Row>
+                <Row >
                     <Card>
                         <Statistic
+                        style={{minWidth:'100px'}}
                             title="USD"
                             value={currenciesRates.USD}
                             precision={4}
@@ -77,10 +79,11 @@ const Currencies = (props: ICurrenciesProps) => {
                             suffix="$"
                         />
                     </Card>
-                </Col>
-                <Col span={3}>
+                </Row>
+                <Row >
                     <Card>
                         <Statistic
+                        style={{minWidth:'100px'}}
                             title="BYN"
                             value={currenciesRates.BYN}
                             precision={4}
@@ -88,8 +91,8 @@ const Currencies = (props: ICurrenciesProps) => {
                             suffix="Br"
                         />
                     </Card>
-                </Col>
-            </Row>
+                </Row>
+            </Col>
         </div>
     );
 };

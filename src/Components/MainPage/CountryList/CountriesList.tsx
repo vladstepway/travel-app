@@ -1,22 +1,20 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {Card, Col, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-const { Meta } = Card
+const { Meta } = Card;
 
-const CountriesList = function ({ countriesList,text,setExcretion,setSearchIsDisabled}: any) {
-
+const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled } : any)=>{
 	const { t } = useTranslation();
 
-	useEffect(() => {
-		setSearchIsDisabled()
-	}, [])
+	React.useEffect(() => {
+		setSearchIsDisabled();
+	},[])
 
-	const list = countriesList.map((el:any) =>{
-		
+	const list = countriesList.map((el:any) =>{	
 		return (
-		<Col span={4} key={el.name}>
+		<Col  span={6}  xs = {{span:16}} sm= {{span:12}} md ={{span:8}} lg = {{span:6}} style={{ marginTop:'20px',display:'flex', justifyContent:'center'}} key={el.name}>
 			<Card
 				hoverable
 				style={{ width: '200px' }}
@@ -28,28 +26,20 @@ const CountriesList = function ({ countriesList,text,setExcretion,setSearchIsDis
 						/>
 					</NavLink>
 				}
-				actions={[
-				]}
 			>
 				<Meta style={{ textAlign: 'center' }}
-
 					title={setExcretion(t(`countryName.${el.name}`),text)}
 					description={setExcretion(t(`capital.${el.name}`),text)}
 				/>
-
 			</Card>
-
 		</Col>
 	)}
 	)
 
-
 	return (
-		
-			<Row wrap style={{display:'flex', justifyContent:'center'}}>
+			<Row  gutter={[8, 48]} justify='center' align='middle' style={{marginLeft:'auto',marginRight:'auto',maxWidth: '1366px'}}>
 				{list}
 			</Row>
-
 	)
 }
 

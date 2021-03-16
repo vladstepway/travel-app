@@ -8,7 +8,7 @@ import { ICountries } from '../../../Interfaces';
 const MapStateToProps = (state: any, { link }: any) => {
 
   return {
-    lang : state.langReducer.lang,
+    lang : state.langReducer,
     country: state.countryReducer.countries.find(
       (el: any) =>
         el.name.toLowerCase() === link.toLowerCase()

@@ -7,7 +7,6 @@ import CountryPageContainer from './CountryPage/CountryPageContainer';
 
 const Page = () => {
   return(<div style={{minHeight:'60vh'}}>
-
     <Switch>
       <Route exact path='/' render={() => <CountryListContainer/>}/>
       <Route path={`/${window.location.pathname.substring(1)}`} render={()=><CountryPageContainer link={window.location.pathname.substring(1)}/>}/>

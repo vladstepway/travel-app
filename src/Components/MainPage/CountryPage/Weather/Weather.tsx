@@ -33,7 +33,7 @@ React.useEffect(() => {
 
   return (
     <Card
-    style={{ width: '240px', textAlign:'center', backgroundColor:'transparent', border:'none'}}
+    style={{ margin:'0 auto', width: '240px', textAlign:'center', backgroundColor:'transparent', border:'none'}}
     cover={
       <div style = {{display:'flex',justifyContent:'center'}}>
       {id ? <i style = {{fontSize: '100px',color:`${(+(id.substring(4))>=800) ? '#FFA570' : '#bde0fe'}`}}  className={`${css.weatherIcon} ${css.owf} ${css[id]}`}/> : <Spin style = {{width:'100px'}} size="large" />}

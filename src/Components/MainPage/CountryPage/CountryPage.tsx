@@ -5,12 +5,12 @@ import FullScreenMap from './Map/BigMap/FullScreenMap';
 import Currencies from './Currencies/Currencies';
 import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
-import './CountryPage.module.css';
+import css from './CountryPage.module.css';
 
 const CountryPage =  (props: any) => {
   const { lang, country, setSearchIsDisabled } = props;
-  const { mapCoords, views } = country.details;
-  const [isFullScreen, setIsFullScreen] = useState(false);
+  const { mapCoords, views,info } = country.details;
+  const [isFullScreen, setIsFullScreen] = useState(true);
 
   function handleClick() {
     !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
@@ -19,10 +19,9 @@ const CountryPage =  (props: any) => {
   React.useEffect(()=>{
     setSearchIsDisabled();
   },[props]);
-  return (
-    <div>
-      <img src={country.photo} alt="" />
-        <div>
+  return (<div className = {css.wrapper}>
+    <div className = {css.upperContent} >
+        <div className={css.leftBlock} > 
             {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
           <button type="button" onClick={handleClick} ><FullscreenOutlined /></button>
           {isFullScreen
@@ -36,11 +35,19 @@ const CountryPage =  (props: any) => {
                   mapCoords={mapCoords}/>}
 
         </div>
-       <Currencies currency={country.currencyCode}/>
-      <Gallery views={views} />
-      <Weather lang={lang} capital = {country.capital}/>
-    </div>
+
+<div className={css.gallery}><Gallery views={views} /></div>
+        <div  className={css.rightBlock}>
+        <Weather lang={lang} capital = {country.capital}/>
+        <Currencies currency={country.currencyCode}/>
+       </div>
+</div>
+<div className={css.bottomBlock}><div className={css.video}>video</div><div className={css.info}>{info}</div></div>
+</div>
   );
 };
+
+
+
 
 export default CountryPage;

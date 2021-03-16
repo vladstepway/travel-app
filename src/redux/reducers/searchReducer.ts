@@ -7,7 +7,6 @@ type SearchActionType = {
   value: boolean;
 };
 
-
 const initialState = {
   text:'',
   disabled: false

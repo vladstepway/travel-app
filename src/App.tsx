@@ -15,7 +15,9 @@ const App: FC = () => (
         <>
             <Layout style={{minHeight:'100vh'}}>
             <Header style={{background:'#FFD97D'}} className="header"><HeaderInner/></Header>
-            <Content><MainPage/></Content>
+            <Content>
+                <MainPage/>
+            </Content>
             <Footer style ={{marginTop:'auto'}}><FooterInner/> </Footer>
             </Layout>
             </>

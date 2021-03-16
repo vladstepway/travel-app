@@ -39,14 +39,15 @@ const Date = (props: IDateProps): JSX.Element => {
         const currentDayOfWeekNumber: number = (new window.Date()).getDay() - 1;
 
         setDay(currentDayNumber);
-        setMonth(months[currentMonthNumber]);
+        lang === 'en'
+            ? setMonth(`of ${months[currentMonthNumber]}`)
+            : setMonth(months[currentMonthNumber]);
         setWeekDay(weekdays[currentDayOfWeekNumber]);
-        console.log(weekdays);
     }, [weekdays, months, lang]);
 
     return <>
         <Col span={4}>
-            <Statistic title="Date" value={`${day} of ${month}`}
+            <Statistic title="Date" value={`${day} ${month}`}
                        prefix={<CalendarOutlined/>}/>
         </Col>
         <Col span={4}>

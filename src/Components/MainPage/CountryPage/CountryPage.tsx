@@ -37,7 +37,7 @@ const CountryPage = (props: any) => {
                   countryCapital={country.capital}
                   countryName={country.name}
                   mapCoords={mapCoords}/>}
-                  <DateAndTime country={country.name} city={country.capital} />
+                  <DateAndTime city={country.capital} lang = {lang} />
         </div>
 
 <div className={css.gallery}><Gallery views={views} /></div>

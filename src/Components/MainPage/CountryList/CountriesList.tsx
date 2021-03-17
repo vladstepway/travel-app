@@ -19,16 +19,15 @@ const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, ge
 		return (
 		<Col  span={6}  xs = {{ span:16 }} sm= {{ span:12 }} md ={{ span:8 }} lg = {{ span:6 }} style={{ marginTop:'20px',display:'flex', justifyContent:'center' }} key={el.name}>
 			<NavLink to={`/${el.name}`} id={el.name} onClick = {()=>{setSearchIsDisabled(true);}} >
+
 			<Card
 				hoverable
 				style={{ width: '200px' }}
 				cover={
-
 						<img style={{ width: '200px', height: '200px', objectFit: 'cover' }}
 							alt="example"
 							src={el.photo}
 						/>
-
 				}
 			>
 				<Meta style={{ textAlign: 'center' }}
@@ -38,15 +37,16 @@ const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, ge
 			</Card>
 			</NavLink>
 		</Col>
-	);}
-	);
+	)}
+	)
 
 	return (
-			<Row  gutter={[8, 48]} justify='center' align='middle' style={{ marginLeft:'auto',marginRight:'auto',maxWidth: '1366px' }}>
+			<Row  gutter={[8, 48]} justify='center' align='middle' style={{marginLeft:'auto',marginRight:'auto',maxWidth: '1366px'}}>
 				{list}
 			</Row>
-	);
-};
+	)
+}
 
 
-export default CountriesList;
+export default CountriesList
+

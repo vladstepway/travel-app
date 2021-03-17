@@ -8,7 +8,6 @@ import {
 import { IInitialStateType } from '../../Interfaces';
 import { initialState } from '../initialState';
 
-
 const countryReducer = (state = initialState, action: any) => {
   const stateCopy: IInitialStateType = { ...state };
   switch (action.type) {

@@ -34,7 +34,7 @@ const Currencies = (props: ICurrenciesProps) => {
                 }
             });
     }, []);
-
+  
     return (
         <div style={{
             display: 'flex',

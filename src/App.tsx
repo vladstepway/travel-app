@@ -11,26 +11,18 @@ import { getCountriesData } from "./API";
 const { Header, Footer,Content } = Layout;
 
 
-
-const App: FC = () => {
-
-    useEffect( () => {
-        const fetchData = async () => {
-            const result = await getCountriesData();
-        };
-        fetchData();
-    }, []);
-
-    return <>
-        <Layout style={{ minHeight:'100vh' }}>
-            <Header style={{ background:'#FFD97D' }} className="header"><HeaderInner/></Header>
+const App: FC = () => (
+    
+        <>
+            <Layout style={{minHeight:'100vh'}}>
+            <Header style={{background:'#FFD97D'}} className="header"><HeaderInner/></Header>
             <Content>
                 <MainPage/>
             </Content>
-            <Footer style ={{ background: '#FFD97D', display:'flex' }}><FooterInner/> </Footer>
-        </Layout>
-    </>;
-};
+            <Footer style ={{background: '#FFD97D', display:'flex'}}><FooterInner/> </Footer>
+            </Layout>
+            </>
+    );
 
 export default App;
 

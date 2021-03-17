@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FullscreenOutlined } from '@ant-design/icons';
-import {Typography} from 'antd';
+import { Typography } from 'antd';
 import css from './CountryPage.module.css';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
@@ -12,6 +12,7 @@ import DateAndTime from './Date/DateAndTime';
 
 const { Text } = Typography;
 const CountryPage = (props: any) => {
+
   const { lang, country, setSearchIsDisabled } = props;
   const { mapCoords, views,info,videoURL } = country.details;
   const [isFullScreen, setIsFullScreen] = useState(true);
@@ -49,8 +50,5 @@ const CountryPage = (props: any) => {
 </div>
   );
 };
-
-
-
 
 export default CountryPage;

@@ -5,8 +5,10 @@ import {
   setCountries,
   setSearchIsDisabled,
 } from '../../../redux/actionCreators/exampleActionCreator';
+import { fetchCountries } from "../../../redux/actions/stateAction";
 
 const countryFilter = function (searchInputTxt: string, countries: any) {
+
   let countriesCopy;
   if (!searchInputTxt) {
     countriesCopy = [...countries];
@@ -43,16 +45,20 @@ const excretion = (name: string, inputText: string) => {
   );
 };
 
-const MapStateToProps = ({searchReducer:{text},countryReducer:{countries}}:any) => {
+const MapStateToProps = ({ searchReducer:{ text },countryReducer:{ loading, error, countries } }:any) => {
   return {
     countriesList: countryFilter(text, countries),
+    loading,
+    error,
     text,
   };
 };
 
 const MapDispatchToProps = (dispatch: any) => {
   return {
-    setCountries: (countriesList: any) => dispatch(setCountries(countriesList)),
+    getCountries: () => {
+      dispatch(fetchCountries());
+    },
     setSearchIsDisabled: () => dispatch(setSearchIsDisabled(false)),
     setExcretion: (name: string, inputText: string) =>
       excretion(name, inputText),

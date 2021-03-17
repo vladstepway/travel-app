@@ -26,6 +26,8 @@ export interface ISearchInput {
 }
 
 export interface IInitialStateType {
+  loading: boolean,
+  error: null,
   countries: ICountries[];
 }
 

@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Layout } from 'antd';
 import './App.css';
 import MainPage from './Components/MainPage/MainPage';
 import HeaderInner from './Components/Header/Header';
-import FooterInner from './Components/Footer/Footer'
+import FooterInner from './Components/Footer/Footer';
 import 'antd/dist/antd.css';
+import { getCountriesData } from "./API";
 
-const { Header, Footer,Content} = Layout;
 
+const { Header, Footer,Content } = Layout;
 
 
 const App: FC = () => (
@@ -22,7 +23,6 @@ const App: FC = () => (
             </Layout>
             </>
     );
-
 
 export default App;
 

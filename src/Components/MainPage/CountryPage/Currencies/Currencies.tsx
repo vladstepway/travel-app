@@ -3,60 +3,50 @@ import { Statistic, Card, Row, Col } from 'antd';
 import { ICurrenciesProps } from '../../../../Interfaces';
 
 const Currencies = (props: ICurrenciesProps) => {
-  const [currenciesRates, setCurrenciesRates] = useState({
-    USD: 0,
-    EUR: 0,
-    BYN: 0,
-  });
+    const [currenciesRates, setCurrenciesRates] = useState({
+        USD: 0,
+        EUR: 0,
+        BYN: 0,
+    });
 
-  const { currency } = props;
+    const { currency } = props;
 
-  useEffect((): any => {
-    fetch(
-      `https://v6.exchangerate-api.com/v6/2e582ca014e3d2a13ce26cc8/latest/${currency}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        if (currency !== 'KPW') {
-          setCurrenciesRates({
-            USD: data.conversion_rates.USD,
-            EUR: data.conversion_rates.EUR,
-            BYN: data.conversion_rates.BYN,
-          });
-        } else {
-          setCurrenciesRates({
-            USD: 0.00111,
-            EUR: 0.0029,
-            BYN: 0.00093,
-          });
-        }
-      });
-  }, []);
+    useEffect((): any => {
+        fetch(
+            `https://v6.exchangerate-api.com/v6/2e582ca014e3d2a13ce26cc8/latest/${currency}`
+        )
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                if (currency !== 'KPW') {
+                    setCurrenciesRates({
+                        USD: data.conversion_rates.USD,
+                        EUR: data.conversion_rates.EUR,
+                        BYN: data.conversion_rates.BYN,
+                    });
+                } else {
+                    setCurrenciesRates({
+                        USD: 0.00111,
+                        EUR: 0.0029,
+                        BYN: 0.00093,
+                    });
+                }
+            });
+    }, []);
   
     return (
-            // <Row style={{ border: "solid 1px #222222" }} gutter={6}>
-            //     <Col span={2}>
-            //         <Statistic title="EUR" value={currenciesRates.EUR}
-            //                    precision={4}/>
-            //     </Col>
-            //     <Col span={2}>
-            //         <Statistic title="USD" value={currenciesRates.USD}
-            //                    precision={4}/>
-            //     </Col>
-            //     <Col span={2}>
-            //         <Statistic title="BYN" value={currenciesRates.BYN}
-            //                    precision={4}/>
-            //     </Col>
-            // </Row>
-        <div style = {{display:'flex', justifyContent: 'center', marginTop:'auto'}} className="site-statistic-demo-card">
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: 'auto'
+        }} className="site-statistic-demo-card">
             <Col>
-                <Row >
+                <Row>
                     <Card>
                         <Statistic
-                        style={{minWidth:'100px'}}
-                            title="EUR"
+                            title={`${currency}/EUR`}
+                            style={{ minWidth: '100px' }}
                             value={currenciesRates.EUR}
                             precision={4}
                             valueStyle={{ color: '#3f8600' }}
@@ -64,11 +54,11 @@ const Currencies = (props: ICurrenciesProps) => {
                         />
                     </Card>
                 </Row>
-                <Row >
+                <Row>
                     <Card>
                         <Statistic
-                        style={{minWidth:'100px'}}
-                            title="USD"
+                            title={`${currency}/USD`}
+                            style={{ minWidth: '100px' }}
                             value={currenciesRates.USD}
                             precision={4}
                             valueStyle={{ color: '#3f8600' }}
@@ -76,11 +66,11 @@ const Currencies = (props: ICurrenciesProps) => {
                         />
                     </Card>
                 </Row>
-                <Row >
+                <Row>
                     <Card>
                         <Statistic
-                        style={{minWidth:'100px'}}
-                            title="BYN"
+                            title={`${currency}/BYN`}
+                            style={{ minWidth: '100px' }}
                             value={currenciesRates.BYN}
                             precision={4}
                             valueStyle={{ color: '#3f8600' }}

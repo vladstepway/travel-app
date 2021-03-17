@@ -6,31 +6,28 @@ const { Option } = Select;
 
 interface ILanguage {
   lang:string;
-  onLanguageChange: (lang: string) => void;
-  setLanguage: (lang: string) => any;
+  setLanguage: (lang: string) => any
 }
 
-const Language = ({lang,setLanguage,onLanguageChange}:ILanguage) => {
+const Language = ({lang,setLanguage}:ILanguage) => {
 const [currentLang, setCurrentLang] = React.useState(lang);
-
 React.useEffect(()=>{
     setCurrentLang(lang)
 },[lang])
+
   return (
     <>
-      <Select 
+      <Select
+        defaultValue = {lang}
         size = 'small'
-        labelInValue
         className = {css.selectBlock}
         onChange={(e:any)=>{
-         setLanguage(e.value);
-         onLanguageChange(e);
-
+         setLanguage(e);
           }}
       >
         <Option className={css.optionBlock} value="ru">Rus</Option>
         <Option className={css.optionBlock} value="en">Eng</Option>
-        <Option className={css.optionBlock} value="by">Bel</Option>
+        <Option className={css.optionBlock} value="be">Bel</Option>
       </Select> 
     </>
   );

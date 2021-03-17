@@ -5,7 +5,7 @@ import { setSearch } from '../../../redux/actionCreators/exampleActionCreator';
 const placeholder:any = {
   'ru' : 'набирайте сударь',
   'en' : 'dial sir',
-  'by' :  'набірайце пане'
+  'be' :  'набірайце пане'
 }
 
 const MapStateToProps = ({searchReducer:{text,disabled},langReducer:lang }: any) => {

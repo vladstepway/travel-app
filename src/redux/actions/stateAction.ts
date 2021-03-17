@@ -1,5 +1,5 @@
 import {
-    fetchStateBegin, fetchStateFailure,
+    fetchStateBegin, fetchStateFailure, fetchDetailsSuccess,
     fetchStateSuccess
 } from "../actionCreators/fetchData";
 
@@ -12,16 +12,28 @@ const countriesURL = 'api/get/countries';
 const countryInfoURL = 'api/get/countryInfo';
 
 export function fetchCountries() {
-    console.log('fetching');
     return async (dispatch: any) => {
             console.log(`${baseURL}${countriesURL}/0`);
             const resp = await fetch(`${baseURL}${countriesURL}/0`);
             const countries = await resp.json();
+            console.log(countries)
             dispatch(fetchStateSuccess(countries));
-            console.log(countries);
             return countries;
     };
 };
+
+export function fetchDetails (country:string) {
+    return async (dispatch: any) => {
+        console.log(`${baseURL}${countriesURL}/${country}`);
+        const resp = await fetch(`${baseURL}${countryInfoURL}/${country}`);
+        const countries = await resp.json();
+        console.log(countries)
+        dispatch(fetchDetailsSuccess(countries));
+        return countries;
+};
+}
+
+
 
 // Handle HTTP errors since fetch won't.
 function handleErrors(response: any) {

@@ -1,24 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, Col, Row } from 'antd';
-import { useTranslation } from 'react-i18next';
+
 
 
 const { Meta } = Card;
 
-const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, getCountries } : any)=>{
-	const { t } = useTranslation();
+const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, fetchDeleteDetails } : any)=>{
 
 	React.useEffect(() => {
-		console.log('use effect');
-		getCountries();
-		setSearchIsDisabled();
+		setSearchIsDisabled()
+		fetchDeleteDetails()
 	},[]);
 
 	const list = countriesList.map((el:any) =>{
+		console.log(el)
 		return (
 		<Col  span={6}  xs = {{ span:16 }} sm= {{ span:12 }} md ={{ span:8 }} lg = {{ span:6 }} style={{ marginTop:'20px',display:'flex', justifyContent:'center' }} key={el.name}>
-			<NavLink to={`/${el.name}`} id={el.name} onClick = {()=>{setSearchIsDisabled(true);}} >
+			<NavLink to={`/${el.nameEN}`} id={el.nameEN} onClick = {()=>{setSearchIsDisabled(true);}} >
 
 			<Card
 				hoverable
@@ -31,8 +30,8 @@ const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, ge
 				}
 			>
 				<Meta style={{ textAlign: 'center' }}
-					title={setExcretion(t(`countryName.${el.name}`),text)}
-					description={setExcretion(t(`capital.${el.name}`),text)}
+					title={setExcretion(el.name,text)}
+					description={setExcretion(el.name,text)}
 				/>
 			</Card>
 			</NavLink>

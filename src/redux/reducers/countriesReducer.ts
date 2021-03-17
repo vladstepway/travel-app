@@ -8,6 +8,8 @@ import {
 import { IInitialStateType } from '../../Interfaces';
 import { initialState } from '../initialState';
 
+
+
 const countryReducer = (state = initialState, action: any) => {
   const stateCopy: IInitialStateType = { ...state };
   switch (action.type) {
@@ -30,6 +32,7 @@ const countryReducer = (state = initialState, action: any) => {
         error: action.payload.error,
         countries: []
       };
+      
     case SET_COUNTRY:
       return stateCopy;
     default:

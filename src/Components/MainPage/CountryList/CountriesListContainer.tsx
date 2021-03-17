@@ -57,10 +57,8 @@ const MapStateToProps = ({ searchReducer:{ text },countryReducer:{ loading, erro
 const MapDispatchToProps = (dispatch: any) => {
   return {
     getCountries: () => {
-      console.log('dispatching');
       dispatch(fetchCountries());
     },
-    setCountries: (countriesList: any) => dispatch(setCountries(countriesList)),
     setSearchIsDisabled: () => dispatch(setSearchIsDisabled(false)),
     setExcretion: (name: string, inputText: string) =>
       excretion(name, inputText),

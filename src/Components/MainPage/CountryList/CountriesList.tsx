@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, Col, Row } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { fetchCountries } from "../../../redux/actions/stateAction";
 
 
 const { Meta } = Card;
@@ -11,7 +10,7 @@ const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, ge
 	const { t } = useTranslation();
 
 	React.useEffect(() => {
-		console.log('use Effect');
+		console.log('use effect');
 		getCountries();
 		setSearchIsDisabled();
 	},[]);

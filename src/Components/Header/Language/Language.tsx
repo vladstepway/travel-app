@@ -18,19 +18,18 @@ React.useEffect(()=>{
 },[lang])
   return (
     <>
-      <Select 
+      <Select
         size = 'small'
         labelInValue
         className = {css.selectBlock}
         onChange={(e:any)=>{
          setLanguage(e.value);
          onLanguageChange(e);
-
           }}
       >
         <Option className={css.optionBlock} value="ru">Rus</Option>
         <Option className={css.optionBlock} value="en">Eng</Option>
-        <Option className={css.optionBlock} value="by">Bel</Option>
+        <Option className={css.optionBlock} value="be">Bel</Option>
       </Select> 
     </>
   );

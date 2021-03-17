@@ -7,13 +7,13 @@ import {
 } from '../../../redux/actionCreators/exampleActionCreator';
 import { fetchCountries } from "../../../redux/actions/stateAction";
 
-const countryFilter = function (searchInputTxt: string, countries: any) {
-
-  let countriesCopy;
+const countryFilter = function (searchInputTxt: string, countries: any, lang: string) {
+let countriesCopy;
   if (!searchInputTxt) {
     countriesCopy = [...countries];
-  } else {
-    countriesCopy = countries.filter((country: any) => {
+  } 
+  else {
+   countriesCopy = countries.filter((country: any) => {
       if (
         country.name.toLowerCase().search(searchInputTxt.toLowerCase()) != -1 ||
         country.capital.toLowerCase().search(searchInputTxt.toLowerCase()) != -1
@@ -45,9 +45,17 @@ const excretion = (name: string, inputText: string) => {
   );
 };
 
-const MapStateToProps = ({ searchReducer:{ text },countryReducer:{ loading, error, countries } }:any) => {
+const MapStateToProps = ({langReducer, searchReducer:{ text },countryReducer:{ loading, error, countries } }:any) => {
+  const countriesArray = countries.map((el:any)=>{
+    return {
+      name: el[`name${langReducer.toUpperCase()}`],
+      capital : el.capital[langReducer].toLowerCase(),
+      photo : el.photo,
+      nameEN : el.nameEN
+    }
+  })
   return {
-    countriesList: countryFilter(text, countries),
+    countriesList: countryFilter(text, countriesArray,langReducer),
     loading,
     error,
     text,

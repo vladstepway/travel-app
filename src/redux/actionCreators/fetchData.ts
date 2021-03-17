@@ -1,4 +1,4 @@
-import { FETCH_STATE_BEGIN, FETCH_STATE_FAILURE, FETCH_STATE_SUCCESS } from "../actions/actionTypes";
+import { FETCH_STATE_BEGIN, FETCH_STATE_FAILURE, FETCH_STATE_SUCCESS, FETCH_DETAILS_SUCCESS } from "../actions/actionTypes";
 
 const baseURL = 'http://damp-thicket-85004.herokuapp.com/';
 
@@ -21,6 +21,13 @@ export const fetchStateFailure = (error: any)=> ({
     type: FETCH_STATE_FAILURE,
     payload: { error }
 });
+
+export const fetchDetailsSuccess = (details: any) => ({
+    type: FETCH_DETAILS_SUCCESS,
+    payload: details
+});
+
+
 
 export function fetchCountries() {
     console.log('1 fetch');

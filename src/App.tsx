@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { Layout } from 'antd';
 import './App.css';
-import MainPage from './Components/MainPage/MainPage';
+import MainPageContainer from './Components/MainPage/MainPageContainer';
 import HeaderInner from './Components/Header/Header';
 import FooterInner from './Components/Footer/Footer';
 import 'antd/dist/antd.css';
@@ -17,7 +17,7 @@ const App: FC = () => (
             <Layout style={{minHeight:'100vh'}}>
             <Header style={{background:'#FFD97D'}} className="header"><HeaderInner/></Header>
             <Content>
-                <MainPage/>
+                <MainPageContainer/>
             </Content>
             <Footer style ={{background: '#FFD97D', display:'flex'}}><FooterInner/> </Footer>
             </Layout>

@@ -30,6 +30,7 @@ const countryReducer = (state = initialState, action: any) => {
         error: action.payload.error,
         countries: []
       };
+      
     case SET_COUNTRY:
       return stateCopy;
     default:

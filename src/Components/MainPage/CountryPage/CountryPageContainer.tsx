@@ -5,13 +5,14 @@ import {
   setSearchIsDisabled,
 } from '../../../redux/actionCreators/exampleActionCreator';
 import { ICountries } from '../../../Interfaces';
+import { fetchDetails } from '../../../redux/actions/stateAction';
 
 const MapStateToProps = (state: any, { link }: any) => {
   return {
     lang : state.langReducer,
-
+    
     country: state.countryReducer.countries.find(
-      (el: any) => el.name.toLowerCase() === link.toLowerCase()
+      (el: any) => el.nameEN === link
     ),
   };
 };
@@ -19,6 +20,7 @@ const MapStateToProps = (state: any, { link }: any) => {
 const MapDispatchToProps = (dispatch: any) => ({
   setCountries: (countriesList: ICountries[]) =>
     dispatch(setCountries(countriesList)),
+  fetchDetails: (name:string) => dispatch(fetchDetails(name)),
   setSearchIsDisabled: () => dispatch(setSearchIsDisabled(true)),
 });
 

@@ -6,6 +6,7 @@ import {
   setSearchIsDisabled,
 } from '../../../redux/actionCreators/exampleActionCreator';
 import { fetchCountries } from "../../../redux/actions/stateAction";
+import {fetchDeleteDetails} from '../../../redux/actionCreators/fetchData'
 
 const countryFilter = function (searchInputTxt: string, countries: any, lang: string) {
 let countriesCopy;
@@ -64,6 +65,8 @@ const MapStateToProps = ({langReducer, searchReducer:{ text },countryReducer:{ l
 
 const MapDispatchToProps = (dispatch: any) => {
   return {
+
+    fetchDeleteDetails: ()=>{dispatch(fetchDeleteDetails())},
     getCountries: () => {
       dispatch(fetchCountries());
     },

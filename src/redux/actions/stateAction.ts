@@ -16,8 +16,8 @@ export function fetchCountries() {
             console.log(`${baseURL}${countriesURL}/0`);
             const resp = await fetch(`${baseURL}${countriesURL}/0`);
             const countries = await resp.json();
+            console.log(countries)
             dispatch(fetchStateSuccess(countries));
-            console.log(countries);
             return countries;
     };
 };
@@ -29,7 +29,6 @@ export function fetchDetails (country:string) {
         const countries = await resp.json();
         console.log(countries)
         dispatch(fetchDetailsSuccess(countries));
-        console.log(countries);
         return countries;
 };
 }

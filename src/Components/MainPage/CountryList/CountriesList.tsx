@@ -1,19 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, Col, Row } from 'antd';
-import { useTranslation } from 'react-i18next';
+
 
 
 const { Meta } = Card;
 
-const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, getCountries } : any)=>{
-	const { t } = useTranslation();
+const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, fetchDeleteDetails } : any)=>{
 
-	// React.useEffect(() => {
-	// 	console.log('use effect');
-	// 	getCountries();
-	// 	setSearchIsDisabled();
-	// },[]);
+	React.useEffect(() => {
+		setSearchIsDisabled()
+		fetchDeleteDetails()
+	},[]);
 
 	const list = countriesList.map((el:any) =>{
 		console.log(el)

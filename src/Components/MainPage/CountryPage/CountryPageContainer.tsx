@@ -8,16 +8,19 @@ import { ICountries } from '../../../Interfaces';
 import { fetchDetails } from '../../../redux/actions/stateAction';
 
 const MapStateToProps = (state: any, { link }: any) => {
+  console.log(state.countryPageReducer.data)
   return {
     lang : state.langReducer,
-    
+    loading : state.countryPageReducer.loading,
+    countryDetails: state.countryPageReducer.data,
     country: state.countryReducer.countries.find(
       (el: any) => el.nameEN === link
     ),
-  };
+  }
 };
 
 const MapDispatchToProps = (dispatch: any) => ({
+
   setCountries: (countriesList: ICountries[]) =>
     dispatch(setCountries(countriesList)),
   fetchDetails: (name:string) => dispatch(fetchDetails(name)),

@@ -11,7 +11,7 @@ import './SmallScreen.css';
 import geojson from '../../../../../data/BorderCoordinates.json';
 import { IMapProps } from '../../../../../Interfaces';
 
-const SmallScreenMap = (props: IMapProps): JSX.Element => {
+const SmallScreenMap = (props: any): JSX.Element => {
   const { center } = props.mapCoords;
   const { capital } = props.mapCoords;
   const { countryName }: any = props;

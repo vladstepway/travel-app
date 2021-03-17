@@ -1,20 +1,40 @@
 import {
-  SET_COUNTRIES,
   SET_COUNTRY,
   FETCH_DETAILS_SUCCESS,
+  FETCH_DELETE_DETAILS,
   FETCH_STATE_FAILURE,
   FETCH_STATE_BEGIN
 } from '../actions/actionTypes';
 import { IInitialStateType } from '../../Interfaces';
-import { initialState } from '../initialState';
 
 
-
+const initialState = {
+  loading: true,
+  error: null,
+  data: {currencyCode: '',
+  details: {
+    info:'',
+    views: [
+      {
+        imgURL: '',
+        viewName: '',
+        about: '',
+      },
+    ],
+    videoURL: '',
+    mapCoords: {
+      center: {},
+      capital: {},
+    },
+  },
+  rating: 0
+}
+}
 
 
 
 const countryPageReducer = (state = initialState, action: any) => {
-  const stateCopy: IInitialStateType = { ...state };
+  const stateCopy: any = { ...state };
   switch (action.type) {
     // case FETCH_STATE_BEGIN:
     //   return {
@@ -23,11 +43,13 @@ const countryPageReducer = (state = initialState, action: any) => {
     //     error: null
     //   };
     case FETCH_DETAILS_SUCCESS:
-      console.log(action.payload.details)
-      return {
-        ...stateCopy,
-        loading: false
+      return {...initialState, loading: false, data:{...action.payload.details},
+
       };
+
+
+    case FETCH_DELETE_DETAILS:
+      return{...initialState, loading:true}
     // case FETCH_STATE_FAILURE:
     //   return {
     //     ...stateCopy,
@@ -39,7 +61,7 @@ const countryPageReducer = (state = initialState, action: any) => {
     case SET_COUNTRY:
       return stateCopy;
     default:
-      return stateCopy;
+      return state;
   }
 };
 

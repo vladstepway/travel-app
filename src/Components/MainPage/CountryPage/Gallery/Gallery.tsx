@@ -63,6 +63,7 @@ function Gallery(props: any) {
     swipeToSlide: true,
     asNavFor: nav1,
     speed: 600,
+
   };
 
   const settingsThumbs = {
@@ -100,7 +101,7 @@ function Gallery(props: any) {
       },
     ],
   };
-  const { views } = props;
+  const { views, lang } = props;
   return (
     <div className="slider-wrapper">
       <Slider
@@ -110,14 +111,14 @@ function Gallery(props: any) {
       >
         {views.map((v: any, i: number) => {
           return (
-            <div className="slick-slide" key={v.viewName}>
-              <h2 className="slick-slide-title">{v.viewName}</h2>
+            <div className="slick-slide" key={v.viewName[lang]}>
+              <h2 className="slick-slide-title">{v.viewName[lang]}</h2>
               <img
                 className="slick-slide-image"
                 src={`${v.imgURL}`}
-                alt={`${v.viewName}`}
+                alt={`${v.viewName[lang]}`}
               />
-              <div className="slick-slide-label">{v.about}</div>
+              <div className="slick-slide-label">{v.about[lang]}</div>
             </div>
           );
         })}
@@ -125,16 +126,15 @@ function Gallery(props: any) {
       <div className="thumbnail-slider-wrap">
         <Slider
           {...settingsThumbs}
-        
           asNavFor={nav1}
           ref={(slider: any) => setSlider2(slider)}
         >
           {views.map((v: any, i: number) => (
-            <div className="slick-slide" key={v.viewName}>
+            <div className="slick-slide" key={v.viewName[lang]}>
               <img
                 className="slick-slide-image"
                 src={`${v.imgURL}`}
-                alt={`${v.viewName}`}
+                alt={`${v.viewName[lang]}`}
               />
             </div>
           ))}

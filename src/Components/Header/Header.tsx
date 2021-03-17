@@ -15,18 +15,11 @@ import './Header.css'
 
 const Header = function () {
 
-  const { i18n } = useTranslation<any>();
-
-  const onLanguageChange = (lang: any) => {
-    i18n.changeLanguage(lang.value);
-  };
-
-
   return (<>
     <Row className='header' wrap justify="center" style={{ background: '#FFD97D', display:'flex'}}>
       <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}><NavLink to='/'><Icon component={PandaSvg} /></NavLink></Col>
       <Col className='ant-col-search' flex={1} style={{ display: 'flex', alignItems: 'center' }}><SearchContainer /></Col>
-      <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }} ><LanguageContainer onLanguageChange={onLanguageChange} /></Col>
+      <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }} ><LanguageContainer/></Col>
     </Row>
   </>)
 }

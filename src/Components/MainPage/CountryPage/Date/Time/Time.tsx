@@ -11,9 +11,9 @@ const Time = (props: any) => {
     useEffect(() => {
         const s: any = new Date();
         const d: any = new Date(s);
-        console.log(reg);
-        console.log(d.toLocaleString({ timeZone: `${reg}` }));
-        console.log(d);
+        // console.log(reg);
+        // console.log(d.toLocaleString({ timeZone: `${reg}` }));
+        // console.log(d);
         const interval = setInterval(() => {
             const dt = new Date().toLocaleString("en-US", { timeZone: `${reg}` });
             // console.log(dt);

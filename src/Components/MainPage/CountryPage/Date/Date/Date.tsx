@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row, Statistic } from "antd";
+import { Col, Statistic } from "antd";
 import { CalendarOutlined, SmileOutlined } from "@ant-design/icons";
 import { daysObj, monthsObj } from "../DataForDateAndTime";
 

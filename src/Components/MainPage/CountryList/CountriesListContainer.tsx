@@ -1,9 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CountriesList from './CountriesList';
-import { setCountries, setSearchIsDisabled } from '../../../redux/actionCreators/exampleActionCreator';
+import {
+  setCountries,
+  setSearchIsDisabled,
+} from '../../../redux/actionCreators/exampleActionCreator';
+import { fetchCountries } from "../../../redux/actions/stateAction";
 
 const countryFilter = function (searchInputTxt: string, countries: any) {
+
   let countriesCopy;
   if (!searchInputTxt) {
     countriesCopy = [...countries];
@@ -40,21 +45,26 @@ const excretion = (name: string, inputText: string) => {
   );
 };
 
-const MapStateToProps = ({
-  countryReducer: { searchInput:{text}, countries },
-}: any) => {
+const MapStateToProps = ({ searchReducer:{ text },countryReducer:{ loading, error, countries } }:any) => {
   return {
     countriesList: countryFilter(text, countries),
+    loading,
+    error,
     text,
   };
 };
 
 const MapDispatchToProps = (dispatch: any) => {
   return {
+    getCountries: () => {
+      console.log('dispatching');
+      dispatch(fetchCountries());
+    },
     setCountries: (countriesList: any) => dispatch(setCountries(countriesList)),
     setSearchIsDisabled: () => dispatch(setSearchIsDisabled(false)),
-    setExcretion: (name: string, inputText: string) => excretion(name, inputText),
-  }
+    setExcretion: (name: string, inputText: string) =>
+      excretion(name, inputText),
+  };
 };
 
 const CountryListContainer = connect(

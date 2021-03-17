@@ -1,6 +1,5 @@
-import { IInitialStateType } from '../../Interfaces';
+import { ISearchInput } from '../../Interfaces';
 import { SET_SEARCH, SET_SEARCH_IS_DISABLED } from '../actions/actionTypes';
-import { initialState } from '../initialState';
 
 type SearchActionType = {
   type: string;
@@ -8,14 +7,19 @@ type SearchActionType = {
   value: boolean;
 };
 
+const initialState = {
+  text:'',
+  disabled: false
+  }
+
 const searchReducer = (state = initialState, action: SearchActionType) => {
-  const stateCopy: IInitialStateType = { ...state };
+  const stateCopy: ISearchInput = { ...state };
   switch (action.type) {
     case SET_SEARCH:
-      stateCopy.searchInput.text = action.inputText;
+      stateCopy.text = action.inputText;
       return stateCopy;
     case SET_SEARCH_IS_DISABLED:
-      stateCopy.searchInput.disabled = action.value;
+      stateCopy.disabled = action.value;
       return stateCopy;
     default:
       return state;

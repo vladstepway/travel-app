@@ -1,26 +1,36 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Layout } from 'antd';
 import './App.css';
 import MainPage from './Components/MainPage/MainPage';
 import HeaderInner from './Components/Header/Header';
-import FooterInner from './Components/Footer/Footer'
+import FooterInner from './Components/Footer/Footer';
 import 'antd/dist/antd.css';
-
-const { Header, Footer,Content} = Layout;
-
+import { getCountriesData } from "./API";
 
 
-const App: FC = () => (
-    
-        <>
-            <Layout style={{minHeight:'100vh'}}>
-            <Header style={{background:'#FFD97D'}} className="header"><HeaderInner/></Header>
-            <Content><MainPage/></Content>
-            <Footer style ={{marginTop:'auto'}}><FooterInner/> </Footer>
-            </Layout>
-            </>
-    );
+const { Header, Footer,Content } = Layout;
 
+
+
+const App: FC = () => {
+
+    useEffect( () => {
+        const fetchData = async () => {
+            const result = await getCountriesData();
+        };
+        fetchData();
+    }, []);
+
+    return <>
+        <Layout style={{ minHeight:'100vh' }}>
+            <Header style={{ background:'#FFD97D' }} className="header"><HeaderInner/></Header>
+            <Content>
+                <MainPage/>
+            </Content>
+            <Footer style ={{ background: '#FFD97D', display:'flex' }}><FooterInner/> </Footer>
+        </Layout>
+    </>;
+};
 
 export default App;
 
@@ -31,3 +41,4 @@ export default App;
 // ?? git merge develop || cherry-pick;
 // git push origin mybranch;
 // pull request на гитхабе;
+

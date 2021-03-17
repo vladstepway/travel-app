@@ -1,5 +1,6 @@
 import React from 'react';
 import { Select } from 'antd';
+import css from './Language.module.css'
 
 const { Option } = Select;
 
@@ -18,18 +19,19 @@ React.useEffect(()=>{
   return (
     <>
       <Select 
+        size = 'small'
         labelInValue
-        style={{ width: 120 }}
+        className = {css.selectBlock}
         onChange={(e:any)=>{
          setLanguage(e.value);
          onLanguageChange(e);
 
           }}
       >
-        <Option value="ru">Rus</Option>
-        <Option value="en">Eng</Option>
-        <Option value="by">Bel</Option>
-      </Select>
+        <Option className={css.optionBlock} value="ru">Rus</Option>
+        <Option className={css.optionBlock} value="en">Eng</Option>
+        <Option className={css.optionBlock} value="by">Bel</Option>
+      </Select> 
     </>
   );
 };

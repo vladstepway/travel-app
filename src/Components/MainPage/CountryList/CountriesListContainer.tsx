@@ -5,7 +5,6 @@ import {
   setSearchIsDisabled,
 } from '../../../redux/actionCreators/exampleActionCreator';
 import { fetchCountries } from "../../../redux/actions/stateAction";
-import {fetchDeleteDetails} from '../../../redux/actionCreators/fetchData'
 
 const countryFilter = function (searchInputTxt: string, countries: any, lang: string) {
 let countriesCopy;

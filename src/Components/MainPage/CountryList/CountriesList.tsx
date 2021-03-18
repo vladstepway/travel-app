@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, Col, Row } from 'antd';
-
+import Preloader from '../Preloader/Preloader'
 
 
 const { Meta } = Card;
 
-const CountriesList = ({getCountries, countriesList,text,setExcretion,setSearchIsDisabled } : any)=>{
+const CountriesList = ({loading, getCountries, countriesList,text,setExcretion,setSearchIsDisabled } : any)=>{
 
 	React.useEffect(() => {
 		setSearchIsDisabled();
@@ -17,6 +17,7 @@ const CountriesList = ({getCountries, countriesList,text,setExcretion,setSearchI
 
 	const list = countriesList.map((el:any) =>{
 		return (
+			
 		<Col  span={6}  xs = {{ span:16 }} sm= {{ span:12 }} md ={{ span:8 }} lg = {{ span:6 }} style={{ marginTop:'20px',display:'flex', justifyContent:'center' }} key={el.name}>
 			<NavLink to={`/${el.nameEN}`} id={el.nameEN} onClick = {()=>{setSearchIsDisabled(true);}} >
 
@@ -40,10 +41,19 @@ const CountriesList = ({getCountries, countriesList,text,setExcretion,setSearchI
 	)}
 	)
 
-	return (
-			<Row  gutter={[8, 48]} justify='center' align='middle' style={{marginLeft:'auto',marginRight:'auto',maxWidth: '1366px'}}>
-				{list}
-			</Row>
+	return (<>
+		{!loading 
+		? 
+		<Row  gutter={[8, 48]} justify='center' align='middle' style={{marginLeft:'auto',marginRight:'auto',maxWidth: '1366px'}}>
+		{list}
+	</Row>	
+	:
+		<Preloader/>
+	}
+
+		
+
+</>
 	)
 }
 

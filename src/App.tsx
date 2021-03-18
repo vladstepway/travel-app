@@ -6,13 +6,13 @@ import HeaderInner from './Components/Header/Header';
 import FooterInner from './Components/Footer/Footer';
 import 'antd/dist/antd.css';
 
-const { Header, Footer, Content } = Layout;
+const {Content } = Layout;
 const App: FC = () => (
 
         <>
             <Layout style={{minHeight:'100vh'}}>
             <HeaderInner/>
-            <Content>
+            <Content style = {{position: 'relative'}}>
                 <MainPage />
             </Content>
             <FooterInner/>

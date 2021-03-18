@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FullscreenOutlined } from '@ant-design/icons';
-import { Typography, Spin } from 'antd';
+import { Typography } from 'antd';
 import css from './CountryPage.module.css';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
@@ -9,6 +9,7 @@ import Weather from './Weather/Weather';
 import Gallery from './Gallery/Gallery';
 import Video from './Video/Video';
 import DateAndTime from './Date/DateAndTime';
+import Preloader from '../Preloader/Preloader'
 
 const { Text } = Typography;
 
@@ -61,9 +62,8 @@ const CountryPage = ({ link, lang, country, setSearchIsDisabled, fetchDetails, f
     <div className={css.bottomBlock}><div className={css.video}><Video url={countryDetails.videoURL} /></div><div className={css.info}><Text>{countryDetails.info[lang]}</Text></div></div>
     </>
       :
-      <div className={css.preloader}><Spin size="large" /></div>
-    }
-  </div>
+      <Preloader/>}
+    </div>
   );
 };
 

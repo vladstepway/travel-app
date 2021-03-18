@@ -6,11 +6,12 @@ import { daysObj, monthsObj } from "../DataForDateAndTime";
 interface IDateProps {
     reg: string;
     lang: string;
+    fontSize: string;
 }
 
 const Date = (props: IDateProps): JSX.Element => {
 
-    const { reg, lang } = props;
+    const { reg, lang, fontSize } = props;
 
     const [weekDay, setWeekDay] = useState('-');
     const [day, setDay] = useState(1);
@@ -46,12 +47,9 @@ const Date = (props: IDateProps): JSX.Element => {
     }, [weekdays, months, lang]);
 
     return <>
-        <Tooltip placement="topLeft" title=":)">
-            <Button>{day} {month}</Button>
-        </Tooltip>
-        <Tooltip placement="topLeft" title=":))" arrowPointAtCenter>
-            <Button>{weekDay}</Button>
-        </Tooltip>
+        <div style={{fontSize: `${fontSize}`}}>
+            {day} {month} {weekDay}
+        </div>
     </>
 };
 

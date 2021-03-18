@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/travel-app/static/css/main.b0fd903e.chunk.css",
+    "main.js": "/travel-app/static/js/main.3056cbbd.chunk.js",
+    "main.js.map": "/travel-app/static/js/main.3056cbbd.chunk.js.map",
+    "runtime-main.js": "/travel-app/static/js/runtime-main.50df4648.js",
+    "runtime-main.js.map": "/travel-app/static/js/runtime-main.50df4648.js.map",
+    "static/css/2.94674693.chunk.css": "/travel-app/static/css/2.94674693.chunk.css",
+    "static/js/2.ee10cbab.chunk.js": "/travel-app/static/js/2.ee10cbab.chunk.js",
+    "static/js/2.ee10cbab.chunk.js.map": "/travel-app/static/js/2.ee10cbab.chunk.js.map",
+    "index.html": "/travel-app/index.html",
+    "static/css/2.94674693.chunk.css.map": "/travel-app/static/css/2.94674693.chunk.css.map",
+    "static/css/main.b0fd903e.chunk.css.map": "/travel-app/static/css/main.b0fd903e.chunk.css.map",
+    "static/js/2.ee10cbab.chunk.js.LICENSE.txt": "/travel-app/static/js/2.ee10cbab.chunk.js.LICENSE.txt",
+    "static/media/getFetch.cjs": "/travel-app/static/media/getFetch.d7d6010d.cjs",
+    "static/media/Weather.module.css": "/travel-app/static/media/owfont-regular.77585afb.eot",
+    "static/media/slick-theme.css": "/travel-app/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50df4648.js",
+    "static/css/2.94674693.chunk.css",
+    "static/js/2.ee10cbab.chunk.js",
+    "static/css/main.b0fd903e.chunk.css",
+    "static/js/main.3056cbbd.chunk.js"
+  ]
+}

@@ -15,7 +15,7 @@ i18n
       ru,
     },
     fallbackLng: 'ru',
-    debug: true,
+    debug: false,
     ns: ['translations'],
     defaultNS: 'translations',
     interpolation: {

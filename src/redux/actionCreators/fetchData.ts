@@ -1,12 +1,8 @@
-import { FETCH_STATE_BEGIN, FETCH_STATE_FAILURE, FETCH_STATE_SUCCESS, FETCH_DETAILS_SUCCESS , FETCH_DELETE_DETAILS} from "../actions/actionTypes";
+import { FETCH_STATE_BEGIN, FETCH_STATE_FAILURE, FETCH_STATE_SUCCESS, FETCH_DETAILS_SUCCESS , FETCH_DELETE_DETAILS } from "../actions/actionTypes";
 
-const baseURL = 'http://damp-thicket-85004.herokuapp.com/';
-
-const addCountry = '/create/country';
+const baseURL = 'https://damp-thicket-85004.herokuapp.com/';
 
 const countriesURL = 'api/get/countries';
-
-const countryInfoURL = 'api/get/countryInfo';
 
 export const fetchStateBegin = () => ({
     type: FETCH_STATE_BEGIN
@@ -30,14 +26,12 @@ export const fetchDetailsSuccess = (details: any) => ({
 
 export const fetchDeleteDetails = () =>({
     type: FETCH_DELETE_DETAILS
-})
+});
 
 
 export function fetchCountries() {
-    
-    console.log('1 fetch');
+
     return (dispatch: any) => {
-        console.log('fetch');
         dispatch(fetchStateBegin());
         return (page = 0) => {
             return fetch(`${baseURL}${countriesURL}/${page}`)
@@ -45,7 +39,6 @@ export function fetchCountries() {
                 .then(res => res.json())
                 .then(json => {
                     dispatch(fetchStateSuccess(json.countries));
-                    console.log(json);
                     return json.countries;
                 })
                 .catch(error => dispatch(fetchStateFailure(error)));
@@ -59,12 +52,3 @@ function handleErrors(response: any) {
     }
     return response;
 }
-
-// export async function getCountriesData(page = 0) {
-//     const resp = await fetch(`${baseURL}${countriesURL}/${page}`);
-//     const countries = await resp.json();
-//     console.log(countries);
-//
-//     return countries;
-// }
-export const aasfasf = 'asdas';

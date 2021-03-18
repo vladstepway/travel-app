@@ -6,16 +6,21 @@ import {
 } from '../../../redux/actionCreators/exampleActionCreator';
 import { fetchCountries } from "../../../redux/actions/stateAction";
 
-const countryFilter = function (searchInputTxt: string, countries: any, lang: string) {
+const countryFilter = function (searchInputTxt: string,
+                                countries: any,
+                                lang: string) {
 let countriesCopy;
   if (!searchInputTxt) {
     countriesCopy = [...countries];
-  } 
+  }
   else {
    countriesCopy = countries.filter((country: any) => {
       if (
-        country.name.toLowerCase().search(searchInputTxt.toLowerCase()) != -1 ||
-        country.capital.toLowerCase().search(searchInputTxt.toLowerCase()) != -1
+        country.name.toLowerCase()
+          .search(searchInputTxt.toLowerCase()) !== -1 ||
+
+        country.capital.toLowerCase()
+          .search(searchInputTxt.toLowerCase()) !== -1
       ) {
         return country;
       }
@@ -44,15 +49,18 @@ const excretion = (name: string, inputText: string) => {
   );
 };
 
-const MapStateToProps = ({langReducer, searchReducer:{ text },countryReducer:{ loading, error, countries } }:any) => {
+const MapStateToProps = ({ langReducer,
+                           searchReducer:{ text },
+                           countryReducer:{ loading,
+                             error, countries } }:any) => {
   const countriesArray = countries.map((el:any)=>{
     return {
       name: el[`name${langReducer.toUpperCase()}`],
       capital : el.capital[langReducer].toLowerCase(),
       photo : el.photo,
       nameEN : el.nameEN
-    }
-  })
+    };
+  });
   return {
     countriesList: countryFilter(text, countriesArray,langReducer),
     loading,
@@ -63,7 +71,7 @@ const MapStateToProps = ({langReducer, searchReducer:{ text },countryReducer:{ l
 
 const MapDispatchToProps = (dispatch: any) => {
   return {
-    getCountries: () => {dispatch(fetchCountries())},
+    getCountries: () => {dispatch(fetchCountries());},
     setSearchIsDisabled: () => dispatch(setSearchIsDisabled(false)),
     setExcretion: (name: string, inputText: string) =>
       excretion(name, inputText),

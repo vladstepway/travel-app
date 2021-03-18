@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks"],
   "extends": ["airbnb-typescript", "react-app", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -29,6 +29,7 @@
       }
     ],
     "@typescript-eslint/no-explicit-any": "off",
+    "react/jsx-no-target-blank": "off",
     "max-len": [
       "warn",
       {
@@ -42,6 +43,7 @@
     "no-plusplus": "off",
     "react/jsx-key": "error",
     "func-names" : "off",
+    "react-hooks/exhaustive-deps": "off",
     "import/no-extraneous-dependencies": [
       "warn",
       {

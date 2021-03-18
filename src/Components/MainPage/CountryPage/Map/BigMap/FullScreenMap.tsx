@@ -12,7 +12,6 @@ import geojson from '../../../../../data/BorderCoordinates.json';
 import { IMapProps } from '../../../../../Interfaces';
 
 const FullScreenMap = (props: IMapProps): JSX.Element => {
-  console.log(props);
   const { center } = props.mapCoords;
   const { capital } = props.mapCoords;
   const { countryName }: any = props;
@@ -23,7 +22,7 @@ const FullScreenMap = (props: IMapProps): JSX.Element => {
     return (
         <>
 
-            <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%, -50%)', zIndex:9999}} className="fmap-wrapper">
+            <div style={{ position:'absolute',top:'50%',left:'50%',transform:'translate(-50%, -50%)', zIndex:9999 }} className="fmap-wrapper">
                 <MapContainer className="fmap"
                               center={[center.latitude, center.longitude]}
                               zoom={5}>

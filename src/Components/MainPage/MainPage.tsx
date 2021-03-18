@@ -2,14 +2,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CountryListContainer from './CountryList/CountriesListContainer';
 import CountryPageContainer from './CountryPage/CountryPageContainer';
+import css from './Page.module.css'
 
-const Page = ({state,setSearchIsDisabled}:any) => {
-
-	// React.useEffect(() => {
-	// },[state]);
-
+const Page = () => {
   return (
-    <div style={{ minHeight: '60vh' }}>
+    <div className={css.mainPage}>
       <Switch>
         <Route exact path="/" render={() => <CountryListContainer />} />
         <Route

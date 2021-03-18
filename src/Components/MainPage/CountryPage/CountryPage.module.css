@@ -4,11 +4,11 @@ img {
 
 
 .wrapper{
-  max-width:1366px; 
+  max-width:1366px;
   margin: 0 auto;
 }
 
-.upperContent{ 
+.upperContent{
   height:max-content;
    display:flex;
   justify-content:space-between;
@@ -38,6 +38,16 @@ margin-top:30px
 
 .info{
   width:50%;
+}
+
+.button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+
 }
 
 
@@ -77,3 +87,4 @@ margin-top:30px
     width:600px;
   }
 }
+

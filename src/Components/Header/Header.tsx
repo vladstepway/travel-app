@@ -11,8 +11,10 @@ import './Header.css';
 const Header = function () {
 
   return (<>
-    <Row className='header' wrap justify="center" style={{ background: '#FFD97D', display: 'flex' }}>
-      <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}><NavLink to='/'><Icon component={PandaSvg} /></NavLink></Col>
+    <Row className='header' wrap justify="center" style={{ background: 'linear-gradient(90deg, rgba(84,82,108,1) 0%, rgba(50,149,116,1) 36%, rgba(102,184,162,1) 73%, rgba(0,212,255,1) 100%);', display:'flex'}}>
+     <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}><NavLink to='/'>
+       <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}><Icon component={PandaSvg} /> <span style={{paddingLeft: "1rem", fontSize: "1.5rem"}}>Travel App</span></div>
+     </NavLink></Col>
       <Col className='ant-col-search' flex={1} style={{ display: 'flex', alignItems: 'center' }}><SearchContainer /></Col>
       <Col flex={1} style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }} ><LanguageContainer /></Col>
     </Row>

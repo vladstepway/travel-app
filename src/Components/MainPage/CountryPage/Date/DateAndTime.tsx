@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Space, Button, Modal } from 'antd';
+import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import Clock from './Time/Time';
 import Date from "./Date/Date";
 import { Regions } from './DataForDateAndTime';
@@ -8,6 +9,7 @@ interface IDateProps {
     city: string
     lang: string
 }
+
 
 const DateAndTime = (props: IDateProps): JSX.Element => {
 
@@ -18,13 +20,29 @@ const DateAndTime = (props: IDateProps): JSX.Element => {
     // @ts-ignore
     const reg: string = Regions[C];
 
-    return (<Row gutter={12} style={{ padding: "5px" }}>
-            <Date reg={reg} lang={lang}
-            />
-            <Col span={4}>
-                <Clock reg={reg}/>
-            </Col>
-        </Row>
+
+  function todayDate() {
+    Modal.info({
+      title: <CalendarOutlined style={{fontSize: `3rem`}} />,
+      content: <Date fontSize="4rem" reg={reg} lang={lang}/>,
+    });
+  }
+
+  function todayTime() {
+    Modal.info({
+      title: <FieldTimeOutlined style={{fontSize: `3rem`}} />,
+      content: <Clock fontSize="4rem" reg={reg}/>,
+    });
+  }
+
+    return (
+        <div style={{ marginTop: '2rem' }}>
+          <Space>
+            <Button onClick={todayDate}><Date fontSize="1rem" reg={reg} lang={lang}
+            /></Button>
+            <Button onClick={todayTime}><Clock fontSize="1rem" reg={reg}/></Button>
+          </Space>
+        </div>
     );
 };
 

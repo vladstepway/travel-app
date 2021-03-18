@@ -6,29 +6,19 @@ import HeaderInner from './Components/Header/Header';
 import FooterInner from './Components/Footer/Footer';
 import 'antd/dist/antd.css';
 
-
-
 const { Header, Footer, Content } = Layout;
 const App: FC = () => (
 
-    <>
-        <Layout style={{ minHeight: '100vh' }}>
-            <Header style={{ background: '#FFD97D' }} className="header"><HeaderInner /></Header>
+        <>
+            <Layout style={{minHeight:'100vh'}}>
+            <HeaderInner/>
             <Content>
                 <MainPage />
             </Content>
-            <Footer style={{ background: '#FFD97D', display: 'flex' }}><FooterInner /> </Footer>
-        </Layout>
-    </>
-);
+            <FooterInner/>
+            </Layout>
+            </>
+    );
 
 export default App;
-
-
-// git checkout develop;
-// git pull origin develop// подтягиваю изменеения из репозитория;
-// git checkout -b mybranch || git checkout mybranch (если надо подтянуть изменения в свою ветку);
-// ?? git merge develop || cherry-pick;
-// git push origin mybranch;
-// pull request на гитхабе;
 

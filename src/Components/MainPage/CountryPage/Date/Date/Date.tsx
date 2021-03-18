@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Col, Statistic } from "antd";
+import {Button, Col, Statistic, Tooltip } from "antd";
 import { CalendarOutlined, SmileOutlined } from "@ant-design/icons";
 import { daysObj, monthsObj } from "../DataForDateAndTime";
 
 interface IDateProps {
     reg: string;
     lang: string;
+    fontSize: string;
 }
 
 const Date = (props: IDateProps): JSX.Element => {
 
-    const { reg, lang } = props;
+    const { reg, lang, fontSize } = props;
 
     const [weekDay, setWeekDay] = useState('-');
     const [day, setDay] = useState(1);
@@ -46,14 +47,10 @@ const Date = (props: IDateProps): JSX.Element => {
     }, [weekdays, months, lang]);
 
     return <>
-        <Col span={4}>
-            <Statistic title="Date" value={`${day} ${month}`}
-                       prefix={<CalendarOutlined/>}/>
-        </Col>
-        <Col span={4}>
-            <Statistic title="Day" value={weekDay} prefix={<SmileOutlined/>}/>
-        </Col>
-    </>;
+        <div style={{fontSize: `${fontSize}`}}>
+            {day} {month} {weekDay}
+        </div>
+    </>
 };
 
 export default Date;

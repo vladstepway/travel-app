@@ -19,9 +19,9 @@ const CountryPage = ({ lang, country, setSearchIsDisabled, fetchDetails, country
     !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
   }
 
-  
+
   React.useEffect(() => {
-   
+
   fetchDetails(country.nameEN)
   setSearchIsDisabled();
   },[]);
@@ -29,12 +29,12 @@ const CountryPage = ({ lang, country, setSearchIsDisabled, fetchDetails, country
 
 
   return (<div className={css.wrapper}>
-    {!loading 
+    {!loading
       ? <>
     <div className={css.upperContent} >
       <div className={css.leftBlock} >
         {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-        <button type="button" onClick={handleClick} ><FullscreenOutlined /></button>
+        <button type="button" className={css.button} onClick={handleClick} ><FullscreenOutlined /></button>
         {isFullScreen
           ? <SmallScreenMap
             countryCapital={country.capital[lang]}
@@ -43,12 +43,12 @@ const CountryPage = ({ lang, country, setSearchIsDisabled, fetchDetails, country
           : <FullScreenMap
             countryCapital={country.capital[lang]}
             countryName={country.nameEN}
-            mapCoords={countryDetails.mapCoords} />} 
-            
-         {/* <DateAndTime city={country.capital[lang]} lang={lang} /> */}
+            mapCoords={countryDetails.mapCoords} />}
+
+          <DateAndTime city={country.capital.en} lang={lang} />
       </div>
 
-       <div className={css.gallery}><Gallery lang = {lang} views={countryDetails.views} /></div> 
+       <div className={css.gallery}><Gallery lang = {lang} views={countryDetails.views} /></div>
       <div className={css.rightBlock}>
         <Weather lang={lang} capital={country.capital[lang]} />
         <Currencies currency={country.currencyCode} />

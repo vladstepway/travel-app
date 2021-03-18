@@ -19,7 +19,7 @@ const DateAndTime = (props: IDateProps): JSX.Element => {
     const reg: string = Regions[C];
 
     return (
-        <div>
+        <div style={{ marginTop: '2rem' }}>
             <Date reg={reg} lang={lang}
             />
             <Clock reg={reg}/>

@@ -77,6 +77,7 @@ function Gallery(props: any) {
     focusOnSelect: true,
     centerPadding: '10px',
     adaptiveHeight: true,
+
     responsive: [
       {
         breakpoint: 700,
@@ -111,7 +112,7 @@ function Gallery(props: any) {
       >
         {views.map((v: any, i: number) => {
           return (
-            <div className="slick-slide" key={v.viewName[lang]}>
+            <div className="slick-slide " key={v.viewName[lang]}>
               <h2 className="slick-slide-title">{v.viewName[lang]}</h2>
               <img
                 className="slick-slide-image"

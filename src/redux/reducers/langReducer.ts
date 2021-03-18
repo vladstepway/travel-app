@@ -5,7 +5,7 @@ type LangActionType = {
   lang: string;
 };
 
-const lang = 'ru'
+const lang = 'ru';
 
 const langReducer = (state = lang, action: LangActionType) => {
   let stateCopy: string  = state;

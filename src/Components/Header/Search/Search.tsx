@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Input } from 'antd';
 import { CompassOutlined } from '@ant-design/icons';
 
-const Search: React.FC = ({ text, disabled, setInputText, placeholder}: any) => {
+const Search: React.FC = ({ text, disabled, setInputText, placeholder}: any)=>{
   const searchRef: any = React.createRef();
   const onSearchEnter = () => setInputText(searchRef.current.props.value);
 

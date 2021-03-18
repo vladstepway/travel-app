@@ -4,6 +4,9 @@ import MainPage from './MainPage';
 import { setSearchIsDisabled } from '../../redux/actionCreators/exampleActionCreator';
 import { fetchCountries } from "../../redux/actions/stateAction";
 
+const MapStateToProps = (state:any)=>{
+  return state;
+}
 
 const MapDispatchToProps = (dispatch: any) => {
   return {
@@ -14,7 +17,7 @@ const MapDispatchToProps = (dispatch: any) => {
 
 
 const CountryListContainer = connect(
-  null,
+  MapStateToProps,
   MapDispatchToProps
 )(MainPage);
 

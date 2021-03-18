@@ -70,3 +70,10 @@ margin-top:30px
     }
     
 }
+
+
+@media(max-width:900px){
+  .adaptive-handler{
+    width:600px;
+  }
+}

@@ -1,74 +1,48 @@
 import {
-    fetchStateBegin, fetchStateFailure, fetchDetailsSuccess,
-    fetchStateSuccess
-} from "../actionCreators/fetchData";
+  fetchDetailsSuccess,
+  fetchStateSuccess,
+} from '../actionCreators/fetchData';
 
 const baseURL = 'http://damp-thicket-85004.herokuapp.com/';
-
-const addCountry = '/create/country';
 
 const countriesURL = 'api/get/countries';
 
 const countryInfoURL = 'api/get/countryInfo';
 
 export function fetchCountries() {
-    return async (dispatch: any) => {
-            console.log(`${baseURL}${countriesURL}/0`);
-            const resp = await fetch(`${baseURL}${countriesURL}/0`);
-            const countries = await resp.json();
-            console.log(countries)
-            dispatch(fetchStateSuccess(countries));
-            return countries;
-    };
-};
-
-export function fetchDetails (country:string) {
-    return async (dispatch: any) => {
-        console.log(`${baseURL}${countriesURL}/${country}`);
-        const resp = await fetch(`${baseURL}${countryInfoURL}/${country}`);
-        const countries = await resp.json();
-        console.log(countries)
-        dispatch(fetchDetailsSuccess(countries));
-        return countries;
-};
+  return async (dispatch: any) => {
+    const resp = await fetch(`${baseURL}${countriesURL}/0`);
+    handleErrors(resp);
+    const countries = await resp.json();
+    await dispatch(fetchStateSuccess(countries));
+  };
 }
 
+export function fetchDetails(country: string) {
+  return async (dispatch: any) => {
+    const resp = await fetch(`${baseURL}${countryInfoURL}/${country}`);
+    handleErrors(resp);
+    const details = await resp.json();
+    dispatch(fetchDetailsSuccess(details));
+  };
+}
 
+export function fetchDetailsWithoutState(link: string) {
+  return async (dispatch: any) => {
+    const resp = await fetch(`${baseURL}${countriesURL}/0`);
+    handleErrors(resp);
+    const countries = await resp.json();
+    await dispatch(await fetchStateSuccess(countries));
+    const respDetails = await fetch(`${baseURL}${countryInfoURL}/${link}`);
+    handleErrors(respDetails);
+    const details = await respDetails.json();
+    dispatch(fetchDetailsSuccess(details));
+  };
+}
 
-// Handle HTTP errors since fetch won't.
 function handleErrors(response: any) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
 }
-//
-// export async function getCountryDetails(country: string) {
-//     const resp = await fetch(`${baseURL}${countryInfoURL}/${country}`);
-//     const countryInfo = await resp.json();
-//
-//     console.log(countryInfo);
-// }
-
-// export function fetchCountries() {
-//     console.log('fetching');
-//     return (dispatch: any) => {
-//         console.log('fetching 2');
-//         dispatch(fetchStateBegin());
-//         return (page = 0) => {
-//             console.log('fetching 3');
-//             return fetch(`${baseURL}${countriesURL}/${page}`)
-//                 .then(handleErrors)
-//                 .then(res => res.json())
-//                 .then(json => {
-//                     dispatch(fetchStateSuccess(json.countries));
-//                     console.log(json);
-//                     return json.countries;
-//                 })
-//                 .catch(error => {
-//                     console.log('error');
-//                     return dispatch(fetchStateFailure(error));
-//                 });
-//         };
-//     };
-// };

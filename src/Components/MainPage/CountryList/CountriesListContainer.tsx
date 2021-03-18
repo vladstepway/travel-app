@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CountriesList from './CountriesList';
 import {
-  setCountries,
   setSearchIsDisabled,
 } from '../../../redux/actionCreators/exampleActionCreator';
 import { fetchCountries } from "../../../redux/actions/stateAction";
@@ -65,11 +64,7 @@ const MapStateToProps = ({langReducer, searchReducer:{ text },countryReducer:{ l
 
 const MapDispatchToProps = (dispatch: any) => {
   return {
-
-    fetchDeleteDetails: ()=>{dispatch(fetchDeleteDetails())},
-    getCountries: () => {
-      dispatch(fetchCountries());
-    },
+    getCountries: () => {dispatch(fetchCountries())},
     setSearchIsDisabled: () => dispatch(setSearchIsDisabled(false)),
     setExcretion: (name: string, inputText: string) =>
       excretion(name, inputText),

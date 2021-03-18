@@ -18,7 +18,7 @@ const DateAndTime = (props: IDateProps): JSX.Element => {
     // @ts-ignore
     const reg: string = Regions[C];
 
-    return (<Row gutter={12} style={{ margin: "5px" }}>
+    return (<Row gutter={12} style={{ padding: "5px" }}>
             <Date reg={reg} lang={lang}
             />
             <Col span={4}>

@@ -3,12 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import CountryListContainer from './CountryList/CountriesListContainer';
 import CountryPageContainer from './CountryPage/CountryPageContainer';
 
-const Page = ({getCountries,setSearchIsDisabled}:any) => {
+const Page = ({state,setSearchIsDisabled}:any) => {
 
-	React.useEffect(() => {
-		getCountries();
-		setSearchIsDisabled();
-	},[]);
+	// React.useEffect(() => {
+	// },[state]);
 
   return (
     <div style={{ minHeight: '60vh' }}>

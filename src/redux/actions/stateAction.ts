@@ -3,7 +3,7 @@ import {
   fetchStateSuccess,
 } from '../actionCreators/fetchData';
 
-const baseURL = 'http://damp-thicket-85004.herokuapp.com/';
+const baseURL = 'https://damp-thicket-85004.herokuapp.com/';
 
 const countriesURL = 'api/get/countries';
 

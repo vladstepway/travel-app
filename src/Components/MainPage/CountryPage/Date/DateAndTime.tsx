@@ -10,6 +10,7 @@ interface IDateProps {
     lang: string
 }
 
+
 const DateAndTime = (props: IDateProps): JSX.Element => {
 
     const { city, lang }: any = props;
@@ -18,6 +19,7 @@ const DateAndTime = (props: IDateProps): JSX.Element => {
 
     // @ts-ignore
     const reg: string = Regions[C];
+
 
   function todayDate() {
     Modal.info({

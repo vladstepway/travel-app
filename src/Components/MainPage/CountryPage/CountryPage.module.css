@@ -78,5 +78,13 @@ margin-top:30px
       margin: 0 auto;
       order:2;
     }
-
+    
 }
+
+
+@media(max-width:900px){
+  .adaptive-handler{
+    width:600px;
+  }
+}
+

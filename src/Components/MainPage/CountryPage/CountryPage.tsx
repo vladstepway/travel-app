@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FullscreenOutlined } from '@ant-design/icons';
-import { Typography } from 'antd';
+import { Typography, Spin } from 'antd';
 import css from './CountryPage.module.css';
 import SmallScreenMap from './Map/SmallMap/SmallScreenMap';
 import FullScreenMap from './Map/BigMap/FullScreenMap';
@@ -12,20 +12,24 @@ import DateAndTime from './Date/DateAndTime';
 
 const { Text } = Typography;
 
-const CountryPage = ({ lang, country, setSearchIsDisabled, fetchDetails, countryDetails, loading }: any) => {
+const CountryPage = ({ link, lang, country, setSearchIsDisabled, fetchDetails, fetchDetailsWithoutState, fetchDeleteDetails, countryDetails, loading }: any) => {
   const [isFullScreen, setIsFullScreen] = useState(true);
-  console.log(country)
   function handleClick() {
     !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
   }
 
-
   React.useEffect(() => {
-
-  fetchDetails(country.nameEN)
-  setSearchIsDisabled();
-  },[]);
-
+    setSearchIsDisabled()
+    country !== null
+      ?
+      fetchDetails(country.nameEN)
+      :
+      fetchDetailsWithoutState(link)
+    return () => {
+      console.log('deleted');
+      fetchDeleteDetails()
+    }
+  }, []);
 
 
   return (<div className={css.wrapper}>
@@ -50,16 +54,16 @@ const CountryPage = ({ lang, country, setSearchIsDisabled, fetchDetails, country
 
        <div className={css.gallery}><Gallery lang = {lang} views={countryDetails.views} /></div>
       <div className={css.rightBlock}>
-        <Weather lang={lang} capital={country.capital[lang]} />
+        <Weather lang={lang} capital={country.capital.en} />
         <Currencies currency={country.currencyCode} />
       </div>
     </div>
     <div className={css.bottomBlock}><div className={css.video}><Video url={countryDetails.videoURL} /></div><div className={css.info}><Text>{countryDetails.info[lang]}</Text></div></div>
     </>
       :
-      <></>
+      <div className={css.preloader}><Spin size="large" /></div>
     }
-    </div>
+  </div>
   );
 };
 

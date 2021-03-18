@@ -6,15 +6,16 @@ import { Card, Col, Row } from 'antd';
 
 const { Meta } = Card;
 
-const CountriesList = ({ countriesList,text,setExcretion,setSearchIsDisabled, fetchDeleteDetails } : any)=>{
+const CountriesList = ({getCountries, countriesList,text,setExcretion,setSearchIsDisabled } : any)=>{
 
 	React.useEffect(() => {
-		setSearchIsDisabled()
-		fetchDeleteDetails()
+		setSearchIsDisabled();
+	 if(!countriesList.length){
+		getCountries()
+	 }
 	},[]);
 
 	const list = countriesList.map((el:any) =>{
-		console.log(el)
 		return (
 		<Col  span={6}  xs = {{ span:16 }} sm= {{ span:12 }} md ={{ span:8 }} lg = {{ span:6 }} style={{ marginTop:'20px',display:'flex', justifyContent:'center' }} key={el.name}>
 			<NavLink to={`/${el.nameEN}`} id={el.nameEN} onClick = {()=>{setSearchIsDisabled(true);}} >

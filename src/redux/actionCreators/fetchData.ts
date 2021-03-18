@@ -34,6 +34,7 @@ export const fetchDeleteDetails = () =>({
 
 
 export function fetchCountries() {
+    
     console.log('1 fetch');
     return (dispatch: any) => {
         console.log('fetch');

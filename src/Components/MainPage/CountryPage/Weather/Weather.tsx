@@ -5,8 +5,9 @@ import css from  './Weather.module.css'
 const { Meta } = Card;
 
 const getWeather = async (lang:string,capital:string) => {  
-  console.log(capital)
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${capital}&lang=${lang ==='by'?'ua': lang}&appid=dd191359a921b4e3412b6d7b1fb83f95&units=metric`;
+ 
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${capital}&lang=${lang ==='be'?'ua': lang}&appid=dd191359a921b4e3412b6d7b1fb83f95&units=metric`;
+  console.log(url)
   const res = await fetch(url);
   const data = await res.json(); 
   return {id:`owf-${data.weather[0].id}`, descrition: data.weather[0].description, temp: data.main.temp};

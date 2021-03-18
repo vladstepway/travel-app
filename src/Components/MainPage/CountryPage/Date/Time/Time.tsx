@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ClockCircleOutlined } from "@ant-design/icons";
-import { Statistic } from "antd";
+import { Statistic, Tooltip } from "antd";
+import { Button } from "antd/lib/radio";
 
 const Time = (props: any) => {
     const { reg } = props;
@@ -24,8 +25,9 @@ const Time = (props: any) => {
     });
 
     return (
-        <Statistic title="Time" value={time} prefix={<ClockCircleOutlined />} />
-    );
+        <Tooltip placement="topLeft" title=":))" arrowPointAtCenter>
+            <Button>{time}</Button>
+        </Tooltip>);
 };
 
 export default Time;

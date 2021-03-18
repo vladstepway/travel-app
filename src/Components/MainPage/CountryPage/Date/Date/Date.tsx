@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Col, Statistic } from "antd";
+import {Button, Col, Statistic, Tooltip } from "antd";
 import { CalendarOutlined, SmileOutlined } from "@ant-design/icons";
 import { daysObj, monthsObj } from "../DataForDateAndTime";
 
@@ -46,14 +46,13 @@ const Date = (props: IDateProps): JSX.Element => {
     }, [weekdays, months, lang]);
 
     return <>
-        <Col span={4}>
-            <Statistic title="Date" value={`${day} ${month}`}
-                       prefix={<CalendarOutlined/>}/>
-        </Col>
-        <Col span={4}>
-            <Statistic title="Day" value={weekDay} prefix={<SmileOutlined/>}/>
-        </Col>
-    </>;
+        <Tooltip placement="topLeft" title=":)">
+            <Button>{day} {month}</Button>
+        </Tooltip>
+        <Tooltip placement="topLeft" title=":))" arrowPointAtCenter>
+            <Button>{weekDay}</Button>
+        </Tooltip>
+    </>
 };
 
 export default Date;

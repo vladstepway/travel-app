@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 
 interface ITimeProps {
     reg: string;
-    fontSize?: string;
+    fontSize: string;
 }
 
-const Time = (props: any) => {
+const Time = (props: ITimeProps) => {
     const { reg, fontSize } = props;
     const [time, setTime] = useState('-');
 
 
 
     useEffect(() => {
-        const s: any = new Date();
-        const d: any = new Date(s);
         const interval = setInterval(() => {
             const dt = new Date().toLocaleString("en-US", { timeZone: `${reg}` });
             const currentTime = (new Date(dt)).toISOString().slice(11, 19);
@@ -23,7 +21,7 @@ const Time = (props: any) => {
     });
 
     return (
-        <div style={{fontSize: `${fontSize}`}}>
+        <div style={{ fontSize: `${fontSize}` }}>
             {time}
         </div>);
 };

@@ -6,12 +6,17 @@ import { Card, Col, Row } from 'antd';
 
 const { Meta } = Card;
 
-const CountriesList = ({getCountries, countriesList,text,setExcretion,setSearchIsDisabled } : any)=>{
+const CountriesList = ({ getCountries,
+												 countriesList,
+												 text,
+												 setExcretion,
+												 setSearchIsDisabled
+} : any)=>{
 
 	React.useEffect(() => {
 		setSearchIsDisabled();
 	 if(!countriesList.length){
-		getCountries()
+		getCountries();
 	 }
 	},[]);
 
@@ -37,16 +42,16 @@ const CountriesList = ({getCountries, countriesList,text,setExcretion,setSearchI
 			</Card>
 			</NavLink>
 		</Col>
-	)}
-	)
+	);}
+	);
 
 	return (
-			<Row  gutter={[8, 48]} justify='center' align='middle' style={{marginLeft:'auto',marginRight:'auto',maxWidth: '1366px'}}>
+			<Row  gutter={[8, 48]} justify='center' align='middle' style={{ marginLeft:'auto',marginRight:'auto',maxWidth: '1366px' }}>
 				{list}
 			</Row>
-	)
-}
+	);
+};
 
 
-export default CountriesList
+export default CountriesList;
 

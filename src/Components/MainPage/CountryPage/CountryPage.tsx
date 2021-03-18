@@ -12,23 +12,26 @@ import DateAndTime from './Date/DateAndTime';
 
 const { Text } = Typography;
 
-const CountryPage = ({ link, lang, country, setSearchIsDisabled, fetchDetails, fetchDetailsWithoutState, fetchDeleteDetails, countryDetails, loading }: any) => {
+const CountryPage = ({ link, lang,
+                       country, setSearchIsDisabled,
+                       fetchDetails, fetchDetailsWithoutState,
+                       fetchDeleteDetails, countryDetails,
+                       loading }: any) => {
   const [isFullScreen, setIsFullScreen] = useState(true);
   function handleClick() {
     !isFullScreen ? setIsFullScreen(true) : setIsFullScreen(false);
   }
 
   React.useEffect(() => {
-    setSearchIsDisabled()
+    setSearchIsDisabled();
     country !== null
       ?
       fetchDetails(country.nameEN)
       :
-      fetchDetailsWithoutState(link)
+      fetchDetailsWithoutState(link);
     return () => {
-      console.log('deleted');
-      fetchDeleteDetails()
-    }
+      fetchDeleteDetails();
+    };
   }, []);
 
 
@@ -52,13 +55,18 @@ const CountryPage = ({ link, lang, country, setSearchIsDisabled, fetchDetails, f
           <DateAndTime city={country.capital.en} lang={lang} />
       </div>
 
-       <div className={css.gallery}><Gallery lang = {lang} views={countryDetails.views} /></div>
+       <div className={css.gallery}>
+         <Gallery lang = {lang} views={countryDetails.views} />
+       </div>
       <div className={css.rightBlock}>
         <Weather lang={lang} capital={country.capital.en} />
         <Currencies currency={country.currencyCode} />
       </div>
     </div>
-    <div className={css.bottomBlock}><div className={css.video}><Video url={countryDetails.videoURL} /></div><div className={css.info}><Text>{countryDetails.info[lang]}</Text></div></div>
+    <div className={css.bottomBlock}><div className={css.video}>
+      <Video url={countryDetails.videoURL} />
+    </div><div className={css.info}><Text>{countryDetails.info[lang]}
+    </Text></div></div>
     </>
       :
       <div className={css.preloader}><Spin size="large" /></div>

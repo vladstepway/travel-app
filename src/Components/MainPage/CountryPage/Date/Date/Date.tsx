@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {Button, Col, Statistic, Tooltip } from "antd";
-import { CalendarOutlined, SmileOutlined } from "@ant-design/icons";
 import { daysObj, monthsObj } from "../DataForDateAndTime";
 
 interface IDateProps {
     reg: string;
     lang: string;
-    fontSize: string;
+    fontSize: string
 }
 
 const Date = (props: IDateProps): JSX.Element => {
@@ -47,10 +45,10 @@ const Date = (props: IDateProps): JSX.Element => {
     }, [weekdays, months, lang]);
 
     return <>
-        <div style={{fontSize: `${fontSize}`}}>
+        <div style={{ fontSize: `${fontSize}` }}>
             {day} {month} {weekDay}
         </div>
-    </>
+    </>;
 };
 
 export default Date;

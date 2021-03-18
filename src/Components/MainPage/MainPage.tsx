@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import CountryListContainer from './CountryList/CountriesListContainer';
 import CountryPageContainer from './CountryPage/CountryPageContainer';
-import css from './Page.module.css'
+import css from './Page.module.css';
 
 const Page = () => {
   return (

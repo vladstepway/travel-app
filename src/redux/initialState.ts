@@ -1,7 +1,7 @@
 import { IInitialStateType } from '../Interfaces';
 
 export const initialState: IInitialStateType = {
-  loading: false,
+  loading: true,
   error: null,
   countries: [
     // {

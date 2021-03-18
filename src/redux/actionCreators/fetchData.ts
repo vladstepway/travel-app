@@ -1,6 +1,6 @@
 import { FETCH_STATE_BEGIN, FETCH_STATE_FAILURE, FETCH_STATE_SUCCESS, FETCH_DETAILS_SUCCESS , FETCH_DELETE_DETAILS } from "../actions/actionTypes";
 
-const baseURL = 'http://damp-thicket-85004.herokuapp.com/';
+const baseURL = 'https://damp-thicket-85004.herokuapp.com/';
 
 const countriesURL = 'api/get/countries';
 

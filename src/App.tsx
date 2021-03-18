@@ -7,18 +7,19 @@ import FooterInner from './Components/Footer/Footer';
 import 'antd/dist/antd.css';
 
 const { Content } = Layout;
+
 const App: FC = () => (
 
-        <>
-            <Layout style={{ minHeight:'100vh' }}>
-            <HeaderInner/>
-            <Content>
+    <>
+        <Layout style={{ minHeight: '100vh' }}>
+            <HeaderInner />
+            <Content style={{ position: 'relative' }}>
                 <MainPage />
             </Content>
-            <FooterInner/>
-            </Layout>
-            </>
-    );
+            <FooterInner />
+        </Layout>
+    </>
+);
 
 export default App;
 

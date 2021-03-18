@@ -3,19 +3,20 @@ import Search from './Search';
 import { setSearch } from '../../../redux/actionCreators/exampleActionCreator';
 
 const placeholder:any = {
-  'ru' : 'набирайте сударь',
-  'en' : 'dial sir',
-  'be' :  'набірайце пане'
+
+  'ru' : 'набирайте, сударь',
+  'en' : 'type, sir',
+  'be' :  'набірайце, cпадарства'
 };
 
 const MapStateToProps = ({
-                           searchReducer:{ text,disabled },
-                           langReducer:lang }: any) => {
-  return(
-  {
-    placeholder : placeholder[lang],
-    text,disabled
-  }
+  searchReducer: { text, disabled },
+  langReducer: lang }: any) => {
+  return (
+    {
+      placeholder: placeholder[lang],
+      text, disabled
+    }
   );
 };
 
